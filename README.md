@@ -4,7 +4,7 @@
 
 ## TCPDF
 
-[cátalogo](tcpdf_cat.md)
+[cátalogo tcpdf](tcpdf_cat.md)
 
 * Se crean docuemnto prográmaticamente y por medio de templates html
 
@@ -23,7 +23,16 @@
 ```
 
 ## FPDF
+
+* Se crean docuemnto prográmaticamente
+
+[cátalogo fpdf](fpdf_cat.md)
+
 ## DOMPDF
+
+* Se crean documentos por medio de templates de html
+
+[cátalogo dompdf](dompdf_cat.md)
 
 
 
