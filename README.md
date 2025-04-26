@@ -1,5 +1,33 @@
 # GESTOR DE ARCHVIOS EN LARAVEL
 
+
+# Funciones para manipular Archivos  
+
+```php
+
+    #  Imagen -> Base64 -> Save
+    ## Guardado de imagen en servidor transportada en base64
+
+    ### Guardado de imagen por formulario
+    Route::view('/chartsend_form', 'ManipulateImages.form_chart2base64'); // form
+    Route::post('/ImageBase64-save', [ManipulateImagesController::class, 'imageBase64_save']); // función
+
+    ### Guardado de SVG
+    Route::view('/chart', 'Graficas.getBase64HighCharts');  // AQUÍ GRAFICA
+    Route::post('/SVGBase64-save', [ManipulateImagesController::class, 'svgbase64_save']); // FUNCIÓN DE GUARDADO
+    
+```
+
+# PDF -> Base64
+
+```php
+
+    ## PDF -> Base64 y retorno de cadena en Base64, además de mostrar una vista del archivo seleccionado.
+    Route::view('/pdfsend_form', 'ManipulatePdfs.form_pdf2base64');              
+    Route::post('/pdf2base64', [ManipulatePDFController::class, "pdf2base64"]);
+
+```
+
 # LIBRERÍAS PARA GENERAR DOCUEMNTOS PDF 
 
 ## TCPDF
