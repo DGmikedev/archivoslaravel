@@ -59,6 +59,7 @@ Route::view('/', 'welcome');
 // Template de documentos con TCPDF
 
     Route::get('/tcpdf-documento', [TcpdfController::class, "documento"]);
+    Route::get('/tcpdf-factura',   [TcpdfController::class, "factura"]);
 
 
 
