@@ -20,10 +20,10 @@ class TCPDFFactura extends TCPDF
         $marca_agua = asset('imgs/logo_mdg.png');
         
         // BAJA LA OPACIDAD DE 0 A 1 DONDE 0 ES TRANSPARENTE Y 1 ES OPACO EN EL DOC
-        $this->SetAlpha(0.1); 
+        $this->SetAlpha(0.04); 
         
         // SE INSERTA LA IMAGEN CON EL ALPHA REDUCIDO POR ENDE LA IMAGEN SE PONDRÁ SEMITRANSPARENTE
-        $this->Image($marca_agua, 15, 100, 180, 0, '', '', '', false, 300);
+        $this->Image($marca_agua, 15, 120, 180, 0, '', '', '', false, 300);
         
         // RESTAURA LA OPACIDAD DE NUEVO A 1
         $this->SetAlpha(1); 
@@ -77,7 +77,7 @@ class TCPDFFactura extends TCPDF
         $this->Line(20, 275, 200, 275); 
         
         // SE AJUSTA LA FUNETE
-        $this->SetFont('helvetica', 'B', 8);
+        $this->SetFont('helvetica', '', 8);
 
 
         $footerHtml = view('TcpdfViews.factura.footer')->render();
@@ -125,7 +125,7 @@ class TCPDFFactura extends TCPDF
             $this->setFontSubsetting(true);
     
             // SE AJUSTA LA FUENTE PARA EL DOCUMENTO
-            $this->SetFont('helvetica', '', 12);
+            $this->SetFont('helvetica', '', 8);
     
             // ADJUNTAMOS LA PRIMERA PÁGINA
             $this->AddPage();
@@ -135,14 +135,25 @@ class TCPDFFactura extends TCPDF
             $this->SetY(37);
 
 
+            // tabla de cliente
+            $html = view('TcpdfViews.factura.cliente')->render();
+            $this->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', false);
+
+            // separador
+            $this->Cell(0, 0, '', 0, 1, 'R', 0, '', 0);
+
             // Tabla de cfdi
             $html = view('TcpdfViews.factura.cfdi')->render();
             $this->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', false);
 
+            // separador
+            $this->Cell(0, 0, '', 0, 1, 'R', 0, '', 0);
 
             $html = view('TcpdfViews.factura.body')->render();
-            $this->writeHTMLCell(0, 20, '', '', $html, 0, 1, 0, true, '', false);
+            $this->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', false);
     
+            // separador
+            $this->Cell(0, 0, '', 0, 1, 'R', 0, '', 0);
     
             // SE CIERRA EL DOCUMENTO Y SACA EL DOCUMENTO
     
