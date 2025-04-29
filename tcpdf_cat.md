@@ -28,4 +28,4 @@ Route::get('/tcpdf-factura', [TcpdfController::class, "factura"]);
 // views("TcpdfViews. ...  ")->rendr(); 
 
 ```
-![alt text](public/imgcat/tcpdf-factura.png)
+![alt text](public/imgcat/tcpdf_factura.png)
