@@ -94,7 +94,7 @@ class TCPDFFactura extends TCPDF
 function printTableHeader($pdf, $w, $headers) {
     $this->SetFillColor(234, 234, 237); // Gris claro
     $this->SetTextColor(0);
-    $this->SetDrawColor(0, 0, 0);
+    $this->SetDrawColor(214, 219, 223);  //#d6dbdf
     $this->SetLineWidth(0.3);
     $this->SetFont('', 'B');
     
@@ -174,6 +174,8 @@ function printTableHeader($pdf, $w, $headers) {
             // Alineación
             $aineacion_celdas = ["C", "C", "C","L", "C", "C"];
 
+            
+
             // Altura estimada de cada fila
             $row_height = 15;
 
@@ -202,9 +204,14 @@ foreach ($rows as $row) {
         $this->printTableHeader($this, $anchos_columnas, $nombres_columnas);
     }
     
+    // Color de fondo
+    $this->SetFillColor(255, 255, 255);  
+
+    // Color del borde: rojo
+    $this->SetDrawColor(214, 219, 223);  //#d6dbdf
     // Imprimir una fila
     for ($i = 0; $i < count($row); ++$i) {
-        $this->MultiCell($anchos_columnas[$i], $row_height, $row[$i], 1, $aineacion_celdas[$i], false, 0);
+        $this->MultiCell($anchos_columnas[$i], $row_height, $row[$i], 1, $aineacion_celdas[$i], true, 0);
     }
     $this->Ln();
 }
