@@ -207,8 +207,6 @@ class TCPDFFactura extends TCPDF
                 
             }
 
-            
-
             // Imprimir encabezado inicial
             $this->printTableHeader($this, $anchos_columnas, $nombres_columnas);
 

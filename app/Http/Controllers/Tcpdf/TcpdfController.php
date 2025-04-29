@@ -39,7 +39,10 @@ class TcpdfController extends Controller
         $diskcache=false;
         $pdfa=false;    
      
+        // DATOS DEL CUERPO DE PRODUCTOS ////////////////////////////////////////////////////////////////////////////////////////////////
+        
         $cabezera_productos = ["Cantidad","Unidad","Id","Descripción","Valor","Importe"];
+
         $productos = [
             ["1", "pieza", "01010101",  "Laptop gama alta, procesador Intel i9, 64GB RAM, SSD 2TB, pantalla OLED.",   "50,000", "50,000"],
             ["2", "pieza", "43211503",  "Monitor 32' 4K UHD, panel IPS, HDR10, tiempo de respuesta 1ms.",             "10,000", "20,000"],
