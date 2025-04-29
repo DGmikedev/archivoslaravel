@@ -6,7 +6,7 @@
 8px
 -->
 
-  <table style="margin-top:10px; width:100%; border:1px solid #aeb6bf" >
+  <table style="margin-top:10px; width:100%; border:1px solid #d6dbdf " >
     <tr 
         style="text-align:center;
                font-size:9px;

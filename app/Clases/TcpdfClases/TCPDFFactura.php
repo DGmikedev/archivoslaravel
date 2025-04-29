@@ -20,7 +20,7 @@ class TCPDFFactura extends TCPDF
         $marca_agua = asset('imgs/logo_mdg.png');
         
         // BAJA LA OPACIDAD DE 0 A 1 DONDE 0 ES TRANSPARENTE Y 1 ES OPACO EN EL DOC
-        $this->SetAlpha(0.04); 
+        $this->SetAlpha(0.05); 
         
         // SE INSERTA LA IMAGEN CON EL ALPHA REDUCIDO POR ENDE LA IMAGEN SE PONDRÁ SEMITRANSPARENTE
         $this->Image($marca_agua, 15, 120, 180, 0, '', '', '', false, 300);
@@ -72,9 +72,9 @@ class TCPDFFactura extends TCPDF
         // AJUSTA LA POSCICIÓN DE Y 15 mm SEPARADA DEL PISO DEL DOCUEMNTO
         $this->SetY(-20);
 
-        // SUBRAYADO 
+        // SUBRAYADO    $this->Line(10, 35, 200, 35); 
         $this->SetLineWidth(0.3);
-        $this->Line(20, 275, 200, 275); 
+        $this->Line(10, 275, 200, 275); 
         
         // SE AJUSTA LA FUNETE
         $this->SetFont('helvetica', '', 8);
@@ -88,6 +88,22 @@ class TCPDFFactura extends TCPDF
         
         // $this->Cell(0, 10, $this->getAliasNumPage(), 0, false, 'R', 0, '', 0, false, 'T', 'M');
     }
+
+
+    // Función para imprimir encabezado
+function printTableHeader($pdf, $w, $headers) {
+    $this->SetFillColor(234, 234, 237); // Gris claro
+    $this->SetTextColor(0);
+    $this->SetDrawColor(0, 0, 0);
+    $this->SetLineWidth(0.3);
+    $this->SetFont('', 'B');
+    
+    for ($i = 0; $i < count($headers); ++$i) {
+        $this->Cell($w[$i], 7, $headers[$i], 1, 0, 'C', 1);
+    }
+    $this->Ln();
+    $this->SetFont('', ''); // Normal
+}
 
 
     public function genera_factura(){
@@ -149,12 +165,50 @@ class TCPDFFactura extends TCPDF
             // separador
             $this->Cell(0, 0, '', 0, 1, 'R', 0, '', 0);
 
-            $html = view('TcpdfViews.factura.body')->render();
-            $this->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', false);
+            // Se establcen el nombre de las columnas
+            $nombres_columnas = ["Id","Cantidad","Unidad","Descripción","Valor","Importe"];
+
+            // Ancho de cada columna
+            $anchos_columnas = [10, 20, 20, 90, 20, 30];
+
+            // Alineación
+            $aineacion_celdas = ["C", "C", "C","L", "C", "C"];
+
+            // Altura estimada de cada fila
+            $row_height = 15;
+
+// Datos de ejemplo
+$rows = [];
+for ($i = 1; $i <= 100; $i++) {
+    $rows[] = [
+    "$i", 
+    "100", 
+    "Pieza",
+    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem consectetur eos quae, qui voluptate doloribus iusto quos. At provident alias harum expedita eius! Laborum, molestias. Odit odio ip", 
+    "$1000",    
+    "$ 1,300,000.00"];
+
+}
+
+// Imprimir encabezado inicial
+$this->printTableHeader($this, $anchos_columnas, $nombres_columnas);
+
+// Ahora filas
+foreach ($rows as $row) {
+    // Verificar si queda espacio para la siguiente fila
+    if ($this->GetY() + $row_height > ($this->getPageHeight() - $this->getBreakMargin())) {
+        // No hay espacio, salto de página
+        $this->AddPage();
+        $this->printTableHeader($this, $anchos_columnas, $nombres_columnas);
+    }
     
-            // separador
-            $this->Cell(0, 0, '', 0, 1, 'R', 0, '', 0);
-    
+    // Imprimir una fila
+    for ($i = 0; $i < count($row); ++$i) {
+        $this->MultiCell($anchos_columnas[$i], $row_height, $row[$i], 1, $aineacion_celdas[$i], false, 0);
+    }
+    $this->Ln();
+}
+
             // SE CIERRA EL DOCUMENTO Y SACA EL DOCUMENTO
     
             
