@@ -13,9 +13,9 @@
   </tr>
 </table>
 
-<table style="width:100%; border:1px solid #aeb6bf" cellpadding="1" >
+<table style="width:100%; border:1px solid #aeb6bf;" cellpadding="1" >
 
-<tr class="resaltado" style=" font-size:9px; ">
+<tr style=" background-color:#d6dbdf; font-size:9px; ">
 
   <td width="70%">&nbsp;&nbsp;DATOS CLIENTE\RECEPTOR:</td>
 

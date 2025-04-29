@@ -23,7 +23,7 @@
         text-align:center;
         background-color: #d6dbdf;
         font-size: 8px;
-      " >
+      ">
       <td style=" width:25%;" >9ERCR-R267643GV-F34D784-11SDFC</td>
       <td style=" width:25%;" >3DDFR-DFR234FGV-FGTH784-45RFTG</td>
       <td style=" width:25%;">30001000000400002495</td>

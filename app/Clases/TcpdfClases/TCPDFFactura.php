@@ -79,34 +79,42 @@ class TCPDFFactura extends TCPDF
         // SE AJUSTA LA FUNETE
         $this->SetFont('helvetica', '', 8);
 
-
         $footerHtml = view('TcpdfViews.factura.footer')->render();
 
         // SE IMPRIME EL NUMERO DE PÁGINA
         $this->writeHTMLCell(0, 15, '', '', $footerHtml, 0, 1, 0, true, '', false);
 
-        
         // $this->Cell(0, 10, $this->getAliasNumPage(), 0, false, 'R', 0, '', 0, false, 'T', 'M');
     }
 
 
     // Función para imprimir encabezado
-function printTableHeader($pdf, $w, $headers) {
-    $this->SetFillColor(234, 234, 237); // Gris claro
-    $this->SetTextColor(0);
-    $this->SetDrawColor(214, 219, 223);  //#d6dbdf
-    $this->SetLineWidth(0.3);
-    $this->SetFont('', 'B');
-    
-    for ($i = 0; $i < count($headers); ++$i) {
-        $this->Cell($w[$i], 7, $headers[$i], 1, 0, 'C', 1);
+    function printTableHeader($pdf, $w, $headers) {
+        
+        // Color de fondo en la celda
+        $this->SetFillColor(234, 234, 237); 
+        
+        // Color del texto
+        $this->SetTextColor(0);
+
+        //Color del marco en el header #d6dbdf
+        $this->SetDrawColor(214, 219, 223);  
+
+        // Ancho de la linea
+        $this->SetLineWidth(0.3);
+
+        // Fuente por default
+        $this->SetFont('', '', 7);
+
+        for ($i = 0; $i < count($headers); ++$i) {
+            $this->Cell($w[$i], 7, $headers[$i], 1, 0, 'C', 1);
+        }
+        $this->Ln();
+        $this->SetFont('', ''); // Normal
     }
-    $this->Ln();
-    $this->SetFont('', ''); // Normal
-}
 
 
-    public function genera_factura(){
+    public function genera_factura( $cabezera_productos, $productos ){
             //  SE AJUSTAN LAS VARIABLES DE INFORMACIÓN DEL DOCUMENTO
             $this->SetCreator(PDF_CREATOR);
             $this->SetAuthor('MIKE DG');
@@ -159,62 +167,95 @@ function printTableHeader($pdf, $w, $headers) {
             $this->Cell(0, 0, '', 0, 1, 'R', 0, '', 0);
 
             // Tabla de cfdi
-            $html = view('TcpdfViews.factura.cfdi')->render();
+            $html = view('TcpdfViews.factura.scd')->render();
             $this->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', false);
 
             // separador
             $this->Cell(0, 0, '', 0, 1, 'R', 0, '', 0);
 
             // Se establcen el nombre de las columnas
-            $nombres_columnas = ["Id","Cantidad","Unidad","Descripción","Valor","Importe"];
+            array_unshift($cabezera_productos, "Partida"); 
+
+            // Se adiciona el numero de partida inscrito en ela factura
+            for($i=0; $i<count($productos); $i++){
+                array_unshift($productos[$i], $i);
+            };
+
+            // ["Partida","Cantidad","Unidad","Id","Descripción","Valor","Importe"];
+            $nombres_columnas = $cabezera_productos; 
 
             // Ancho de cada columna
-            $anchos_columnas = [10, 20, 20, 90, 20, 30];
+            $anchos_columnas = [10, 13, 13, 15, 88, 20, 30];
 
             // Alineación
-            $aineacion_celdas = ["C", "C", "C","L", "C", "C"];
-
-            
+            $aineacion_celdas = ["C","C", "C", "C","L", "C", "C"];
 
             // Altura estimada de cada fila
             $row_height = 15;
 
-// Datos de ejemplo
-$rows = [];
-for ($i = 1; $i <= 100; $i++) {
-    $rows[] = [
-    "$i", 
-    "100", 
-    "Pieza",
-    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem consectetur eos quae, qui voluptate doloribus iusto quos. At provident alias harum expedita eius! Laborum, molestias. Odit odio ip", 
-    "$1000",    
-    "$ 1,300,000.00"];
+            // Carga datos en array 
+            $rows = [];
+            for ($i = 1; $i <= 50; $i++) {
+                $rows[] = [
+                "$i", 
+                "ss",
+                "100", 
+                "Pieza",
+                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem consectetur eos quae, qui voluptate doloribus iusto quos. At provident alias harum expedita eius! Laborum, molestias. Odit odio ip", 
+                "$1000",    
+                "$ 1,300,000.00"];
+                
+            }
 
-}
+            
 
-// Imprimir encabezado inicial
-$this->printTableHeader($this, $anchos_columnas, $nombres_columnas);
+            // Imprimir encabezado inicial
+            $this->printTableHeader($this, $anchos_columnas, $nombres_columnas);
 
-// Ahora filas
-foreach ($rows as $row) {
-    // Verificar si queda espacio para la siguiente fila
-    if ($this->GetY() + $row_height > ($this->getPageHeight() - $this->getBreakMargin())) {
-        // No hay espacio, salto de página
-        $this->AddPage();
-        $this->printTableHeader($this, $anchos_columnas, $nombres_columnas);
-    }
-    
-    // Color de fondo
-    $this->SetFillColor(255, 255, 255);  
+            // Fuente por default
+        $this->SetFont('', '');
+            
+            // Se recorre el array con los rows
+            // foreach ($rows as $row) {
+            $partida = 0;
+                foreach ($productos as $row){
+                // Verificar si queda espacio para la siguiente fila
+                if ($this->GetY() + $row_height > ($this->getPageHeight() - $this->getBreakMargin())) {
+                    // No hay espacio, salto de página
+                    $this->AddPage();
+                    $this->printTableHeader($this, $anchos_columnas, $nombres_columnas);
+                }
 
-    // Color del borde: rojo
-    $this->SetDrawColor(214, 219, 223);  //#d6dbdf
-    // Imprimir una fila
-    for ($i = 0; $i < count($row); ++$i) {
-        $this->MultiCell($anchos_columnas[$i], $row_height, $row[$i], 1, $aineacion_celdas[$i], true, 0);
-    }
-    $this->Ln();
-}
+                // Color de fondo
+                $this->SetFillColor(255, 255, 255);  
+            
+                // Color del borde
+                $this->SetDrawColor(214, 219, 223);  //#d6dbdf
+
+                // Imprimir una fila
+                for ($i = 0; $i < count($row); ++$i) {
+                    $this->MultiCell($anchos_columnas[$i], $row_height, $row[$i], 1, $aineacion_celdas[$i], false, 0);
+                }
+
+                $partida++;
+                $this->Ln();
+            }
+
+            // separador
+            $this->Cell(0, 0, '', 0, 1, 'R', 0, '', 0);
+
+
+            $html = view('TcpdfViews.factura.comprobante')->render();
+            $this->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', false);
+
+             // separador
+             $this->Cell(0, 0, '', 0, 1, 'R', 0, '', 0);
+
+
+             $html = view('TcpdfViews.factura.sellos')->render();
+             $this->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', false);
+
+
 
             // SE CIERRA EL DOCUMENTO Y SACA EL DOCUMENTO
     
@@ -224,7 +265,7 @@ foreach ($rows as $row) {
 
 
             // NOMBRE SIN PATH DE GUARDADO, SOLO PARA MOSTRAR Y DESCARGAR
-            $nombre = "comunicado_prensa" . date('Ymd') . "_14";
+            $nombre = "factura" . date('Ymd') . "JHB86YGY8";
             
             $tipo = "I";
             // I:  MANDA EL ARCHIVO A EL BROWSER USARÁ EL PLUGIN DE VISOR ESTA INSTALADO EL NOMBRE AJUSTA ES EL NOMBRE QUE SE USARÁ CON LASELECCION GUARDAR COMO
