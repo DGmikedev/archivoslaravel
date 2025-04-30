@@ -29,7 +29,7 @@
                 event.preventDefault(); 
             
                 const datad = new FormData(frm);
-            
+
                 fetch('/ImageBase64-save',{
                     method:"POST",
                     body: datad,

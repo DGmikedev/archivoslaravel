@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Clases\TcpdfClases\TCPDFDocumento;
 use App\Clases\TcpdfClases\TCPDFFactura;
+use App\Clases\TcpdfClases\TCPDFReporte;
 // use TCPDF;
 
 
@@ -40,7 +41,7 @@ class TcpdfController extends Controller
         $pdfa=false;    
      
         // DATOS DEL CUERPO DE PRODUCTOS ////////////////////////////////////////////////////////////////////////////////////////////////
-        
+
         $cabezera_productos = ["Cantidad","Unidad","Id","Descripción","Valor","Importe"];
 
         $productos = [
@@ -65,7 +66,23 @@ class TcpdfController extends Controller
 
         $pdf->genera_factura($cabezera_productos, $productos);
 
-        return 'Hola factura';
+    }
+
+
+    public function reporte(){
+        
+        $orientation='L';  
+        $unit='mm'; 
+        $format='legal'; 
+        $unicode=true; 
+        $encoding='UTF-8'; 
+        $diskcache=false;
+        $pdfa=false;    
+     
+        $pdf = new TCPDFReporte( $orientation, $unit, $format, $unicode, $encoding, $diskcache, $pdfa);
+
+        $pdf->getreporte();
+        
     }
 
 }

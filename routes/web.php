@@ -60,13 +60,6 @@ Route::view('/', 'welcome');
 
     Route::get('/tcpdf-documento', [TcpdfController::class, "documento"]);
     Route::get('/tcpdf-factura',   [TcpdfController::class, "factura"]);
-
-
-
-
-
-
-
-
+    Route::get('/tcpdf-reporte',   [TcpdfController::class, "reporte"]);
 
 

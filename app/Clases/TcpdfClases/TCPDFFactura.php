@@ -193,25 +193,11 @@ class TCPDFFactura extends TCPDF
             // Altura estimada de cada fila
             $row_height = 15;
 
-            // Carga datos en array 
-            $rows = [];
-            for ($i = 1; $i <= 50; $i++) {
-                $rows[] = [
-                "$i", 
-                "ss",
-                "100", 
-                "Pieza",
-                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem consectetur eos quae, qui voluptate doloribus iusto quos. At provident alias harum expedita eius! Laborum, molestias. Odit odio ip", 
-                "$1000",    
-                "$ 1,300,000.00"];
-                
-            }
-
             // Imprimir encabezado inicial
             $this->printTableHeader($this, $anchos_columnas, $nombres_columnas);
 
             // Fuente por default
-        $this->SetFont('', '');
+            $this->SetFont('', '');
             
             // Se recorre el array con los rows
             // foreach ($rows as $row) {

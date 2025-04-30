@@ -46,6 +46,8 @@ class ManipulateImagesController extends Controller
 
             if (preg_match('/^data:image\/svg\+xml;base64,/', $base64)) {
 
+                return response()->json(['estatus' => true]);
+
                 // Eliminar el encabezado
                 $base64 = substr($base64, strpos($base64, ',') + 1); 
 
