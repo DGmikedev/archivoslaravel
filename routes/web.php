@@ -43,6 +43,17 @@ Route::view('/', 'welcome');
     ### Guardado de SVG
     Route::view('/chart', 'Graficas.getBase64HighCharts');  // AQUÍ GRAFICA
     Route::post('/SVGBase64-save', [ManipulateImagesController::class, 'svgbase64_save']); // FUNCIÓN DE GUARDADO
+
+    ### creacion de grafico de highchart mediante servidor
+
+    Route::get('/generar-grafica', [ManipulateImagesController::class, 'creacionHGCHRT']);
+    Route::get('/descargar-grafica', function () {
+        return Storage::download('graficas/grafica-ventas.svg');
+    });
+
+
+
+
     
 
 // Templates de docuemntos en DOMPDF

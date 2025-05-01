@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Tcpdf;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use App\Clases\TcpdfClases\TCPDFDocumento;
 use App\Clases\TcpdfClases\TCPDFFactura;
 use App\Clases\TcpdfClases\TCPDFReporte;
@@ -78,6 +79,10 @@ class TcpdfController extends Controller
         $encoding='UTF-8'; 
         $diskcache=false;
         $pdfa=false;    
+
+        
+
+        $response = Http::get('http://archivoslaravel.com:8080/chart');
      
         $pdf = new TCPDFReporte( $orientation, $unit, $format, $unicode, $encoding, $diskcache, $pdfa);
 

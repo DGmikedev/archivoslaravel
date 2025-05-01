@@ -26,7 +26,7 @@
                     </tr>
                 </table>
             </td>
-            <td > Grafica</td>
+            
         </tr>
     </table>
 </html>

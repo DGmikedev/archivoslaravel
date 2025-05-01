@@ -143,13 +143,23 @@ class TCPDFReporte extends TCPDF
              $this->SetY(37);
 
             
+
              // tabla de ventas
             $this->SetFont('', '', 9, '', true);
             $html = view('TcpdfViews.reporte.ventas', ["css" => $this->css->estilo_ventas()])->render();
-            $this->writeHTMLCell(0, 0, '', '', $html, 1, 1, 0, true, '', false);
+            $this->writeHTMLCell(100, 5, '', '', $html, 0, 1, 0, true, '', false);
+
+            $grafica = asset('storage/highchartsGraficas/grafica-ventas.svg');
+            $this->Image($grafica, 110, 30, 120, 110, 'SVG', '', '', false, 300);
 
             // separador
             $this->Cell(0, 0, '', 0, 1, 'R', 0, '', 0);
+
+
+           
+
+
+            
 
 
 

@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+
+// para  salval archivos SVG
 use Illuminate\Support\Facades\File;
+
+// Para servidor de highcharts
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 
 
@@ -46,7 +52,7 @@ class ManipulateImagesController extends Controller
 
             if (preg_match('/^data:image\/svg\+xml;base64,/', $base64)) {
 
-                return response()->json(['estatus' => true]);
+                // return response()->json(['estatus' => true]);
 
                 // Eliminar el encabezado
                 $base64 = substr($base64, strpos($base64, ',') + 1); 
@@ -69,6 +75,75 @@ class ManipulateImagesController extends Controller
             return response()->json(["estatus" => $e]);    
         }
 
-    } 
+    }
+
+    public function creacionHGCHRT(){
+
+         // Datos de ejemplo para una gráfica de barras
+
+         $chartOptions = [
+
+            // Bloque titutlo y subtitulo
+            'chart' =>    ['type' => 'column', 'width' => '500', 'height' => '250'],
+            'title' =>    ['text' => 'Venta Anual 2024', 'align' => 'center'], //  eje x: 190 ,, text: document.getElementById('title-input').value
+            'subtitle' => ['text' => 'Comportamiento Anual', 'align' => 'center'],
+
+            // Leyenda del grafico
+            'legend' => ['enabled' => false],
+
+            // Colores en las series
+            'plotOptions' => [
+                'series' => [ 'color'=>'#58d68d',  
+                                'dataLabels' => [ 
+                                    'enabled' => true, 'format' => '{point.y}' 
+                                ] 
+                            ]  
+            ], 
+
+            // Quitar la leyenda de creditos highcharts.com
+            'credits' => ['enabled' => false],
+
+            'xAxis' => [
+                'categories' => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                'title' => ['text' => 'Meses', 'align' => 'low'],
+            ],
+            'yAxis' => [
+                'min' => 0,
+                'title' => ['text' => 'Milones de pesos', 
+                            'align' => 'low'     //high
+                        ],  
+                'labels' => [
+                        'overflow' => 'justify',
+                        'format' => '${value} Mdp']
+            ],
+            'series' => [
+                [
+                    'name' => '2024',
+                    'data' => [0.75, 1.2, 3, 2.5, 4.5, 4, 3, 2.1, 2, 1.5, 2, 6]
+                ]
+            ]
+        ];
+
+        // Enviar datos al servidor de Highcharts Export
+        $response = Http::post('http://localhost:7801/', [
+            'infile' => json_encode($chartOptions),
+            'type' => 'image/svg+xml', //'image/svg+xml', // También puedes usar 'image/png' o 'image/jpeg'
+            'constr' => 'Chart'
+        ]);
+
+        if ($response->successful()) {
+
+            // Guardar la imagen en storage/app/graficas/
+            Storage::disk('public')->put('highchartsGraficas/grafica-ventas.svg', $response->body());
+
+            return response()->json(['status' => 'ok', 'mensaje' => 'Gráfica generada correctamente.']);
+
+        } else {
+
+            return response()->json(['status' => 'error', 'mensaje' => 'No se pudo generar la gráfica.']);
+
+        }
+
+    }
 
 }
