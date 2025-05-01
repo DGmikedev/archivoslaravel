@@ -38,6 +38,7 @@ class Cssreporte{
                 font-size:12px;
             }
             .tbl_verde{
+                margin:2px;
                 padding: 5px;
                 background-color:#eafaf1;
             }

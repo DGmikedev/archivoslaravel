@@ -144,16 +144,29 @@ class TCPDFReporte extends TCPDF
 
             
 
-             // tabla de ventas
             $this->SetFont('', '', 9, '', true);
-            $html = view('TcpdfViews.reporte.ventas', ["css" => $this->css->estilo_ventas()])->render();
-            $this->writeHTMLCell(100, 5, '', '', $html, 0, 1, 0, true, '', false);
+           
+            // $this->Cell(0, 0, 'VENTAS POR TRIMESTRE ', 'B', 1, 'B', 0, '', 0);
+// 
+            // $this->Cell(0, 0, '', 0, 1, '', 0, '', 0);
 
-            $grafica = asset('storage/highchartsGraficas/grafica-ventas.svg');
-            $this->Image($grafica, 110, 30, 120, 110, 'SVG', '', '', false, 300);
+            $grafica = asset('storage/highchartsGraficas/grafica-ventas.png');
+            $this->Image($grafica, 10, 45, 150, 80, 'PNG', '', '', false, 300);
+
+              // tabla de ventas              https://api.highcharts.com/highcharts/chart.height
+            
+            //$html = view('TcpdfViews.reporte.ventas', ["css" => $this->css->estilo_ventas()])->render();
+            //$this->writeHTMLCell(40, 50, '', '', $html, 0, 1, 0, true, '', false);
 
             // separador
             $this->Cell(0, 0, '', 0, 1, 'R', 0, '', 0);
+
+
+
+
+            
+
+            
 
 
            

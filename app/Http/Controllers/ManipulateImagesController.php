@@ -84,9 +84,9 @@ class ManipulateImagesController extends Controller
          $chartOptions = [
 
             // Bloque titutlo y subtitulo
-            'chart' =>    ['type' => 'column', 'width' => '500', 'height' => '250'],
-            'title' =>    ['text' => 'Venta Anual 2024', 'align' => 'center'], //  eje x: 190 ,, text: document.getElementById('title-input').value
-            'subtitle' => ['text' => 'Comportamiento Anual', 'align' => 'center'],
+            'chart' =>    ['type' => 'bar'], // , 'width' => '500', 'height' => '400'
+            'title' =>    ['text' => 'Venta Anual 2024', 'align' => 'left'], //  eje x: 190 ,, text: document.getElementById('title-input').value
+           'subtitle' => ['text' => '(Eje y: # Trimestre)(Eje x : Millones de peasos)', 'align' => 'right'],
 
             // Leyenda del grafico
             'legend' => ['enabled' => false],
@@ -95,7 +95,7 @@ class ManipulateImagesController extends Controller
             'plotOptions' => [
                 'series' => [ 'color'=>'#58d68d',  
                                 'dataLabels' => [ 
-                                    'enabled' => true, 'format' => '{point.y}' 
+                                    'enabled' => true, 'format' => '{point.y} Millones de pesos' 
                                 ] 
                             ]  
             ], 
@@ -104,22 +104,28 @@ class ManipulateImagesController extends Controller
             'credits' => ['enabled' => false],
 
             'xAxis' => [
-                'categories' => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-                'title' => ['text' => 'Meses', 'align' => 'low'],
+                'categories' => ['TRMSTR 1', 'TRMSTR 2', 'TRMSTR 3', 'TRMSTR 4'],
+                'title' => ['text' => '', 'align' => 'low'],
+                'labels' => ['style' => [
+                            'color' => '#000000' ]
+                        ]
             ],
             'yAxis' => [
                 'min' => 0,
-                'title' => ['text' => 'Milones de pesos', 
-                            'align' => 'low'     //high
+                'title' => ['text' => 'MDP', 
+                            // 'align' => 'low'     //high
                         ],  
                 'labels' => [
                         'overflow' => 'justify',
-                        'format' => '${value} Mdp']
+                        'format' => '${value} Millones',
+                        'style' => [
+                            'color' => '#000000' ]
+                        ]
             ],
             'series' => [
                 [
                     'name' => '2024',
-                    'data' => [0.75, 1.2, 3, 2.5, 4.5, 4, 3, 2.1, 2, 1.5, 2, 6]
+                    'data' => [0.75, 4.5, 4, 3]
                 ]
             ]
         ];
@@ -127,14 +133,14 @@ class ManipulateImagesController extends Controller
         // Enviar datos al servidor de Highcharts Export
         $response = Http::post('http://localhost:7801/', [
             'infile' => json_encode($chartOptions),
-            'type' => 'image/svg+xml', //'image/svg+xml', // También puedes usar 'image/png' o 'image/jpeg'
+            'type' => 'image/png', //'image/svg+xml', // También puedes usar 'image/png' o 'image/jpeg'
             'constr' => 'Chart'
         ]);
 
         if ($response->successful()) {
 
             // Guardar la imagen en storage/app/graficas/
-            Storage::disk('public')->put('highchartsGraficas/grafica-ventas.svg', $response->body());
+            Storage::disk('public')->put('highchartsGraficas/grafica-ventas.png', $response->body());
 
             return response()->json(['status' => 'ok', 'mensaje' => 'Gráfica generada correctamente.']);
 

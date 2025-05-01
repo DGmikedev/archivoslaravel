@@ -1,8 +1,10 @@
 <html>
     <style> {{ $css }}</style>
 
-    <table >
+    <table width="870px">
         <tr>
+            <td width="80%" >.</td>
+  
             <td>
                 <table class="paragraph tbl_verde" >
                     <tr>
