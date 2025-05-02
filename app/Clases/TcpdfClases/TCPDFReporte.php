@@ -3,6 +3,7 @@
 namespace App\Clases\TcpdfClases;
 
 use App\Clases\TcpdfClases\css\Cssreporte;
+use App\Clases\ChartsHighcharts\ChartsHGC;
 use TCPDF;
 
 class TCPDFReporte extends TCPDF
@@ -150,7 +151,7 @@ class TCPDFReporte extends TCPDF
 // 
             // $this->Cell(0, 0, '', 0, 1, '', 0, '', 0);
 
-            $grafica = asset('storage/highchartsGraficas/grafica-ventas.png');
+            $grafica = asset('storage/highchartsGraficas/barra.png');
             $this->Image($grafica, 10, 45, 150, 80, 'PNG', '', '', false, 300);
 
               // tabla de ventas              https://api.highcharts.com/highcharts/chart.height
@@ -161,6 +162,13 @@ class TCPDFReporte extends TCPDF
             // separador
             $this->Cell(0, 0, '', 0, 1, 'R', 0, '', 0);
 
+            $c = ChartsHGC::pieHGC();
+
+            $c = json_decode($c);
+
+            if($c->status){
+                $this->Cell(0, 0, 'VENTAS POR TRIMESTRE ', 'B', 1, 'B', 0, '', 0);
+            }
 
 
 

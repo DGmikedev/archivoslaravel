@@ -78,15 +78,74 @@ class ManipulateImagesController extends Controller
     }
 
     public function creacionHGCHRT(){
-
+/*
          // Datos de ejemplo para una gráfica de barras
 
          $chartOptions = [
+            'chart'   => [ 'type'=> 'pie' ],
+            'title'   => [ 'text'=> 'Egg Yolk Composition' ],
+            'tooltip' => [ 'valueSuffix'=> '%' ],
+            'subtitle'=> [ 'text'=> 'SUBTITULO PIE'],
+
+            'plotOptions'=> [
+                'pie'=> [
+                    'allowPointSelect'=> true,
+                    'cursor'=> 'pointer',
+                    'dataLabels'=> [
+                        [ 'enabled'=> true, 'distance'=> '20' ],
+                        [
+                            'enabled'=> true,
+                            'distance'=> '-40',
+                            'format'=> '{point.percentage:.1f}%',
+                            'style'=> [
+                                'fontSize'=> '1.2em',
+                                'textOutline'=> 'none',
+                                'opacity'=> '0.7'
+                            ],
+                            'filter'=> [
+                                'operator'=> '>',
+                                'property'=> 'percentage',
+                                'value'=> '10'
+                            ],
+                        ]
+                    ]
+                ]
+            ],
+            'series'=> [
+                [
+                    'name'=> 'Percentage',
+                    'colorByPoint'=> true,
+                    'data'=> [
+                        [
+                            'name'=> 'DOOM',
+                            'y'=> 250.02
+                        ],
+                       
+                        [
+                            'name'=> 'Carbohydrates',
+                            'y'=> 1.09
+                        ],
+                        [
+                            'name'=> 'Protein',
+                            'y'=> 15.5
+                        ],
+                        [
+                            'name'=> 'Ash',
+                            'y'=> 1.68
+                        ]
+                    ]
+                ]
+            ]
+         ];
+        */
+        // NO MOVER
+         
+         $chartOptions = [
 
             // Bloque titutlo y subtitulo
-            'chart' =>    ['type' => 'bar'], // , 'width' => '500', 'height' => '400'
-            'title' =>    ['text' => 'Venta Anual 2024', 'align' => 'left'], //  eje x: 190 ,, text: document.getElementById('title-input').value
-           'subtitle' => ['text' => '(Eje y: # Trimestre)(Eje x : Millones de peasos)', 'align' => 'right'],
+            'chart' =>    ['type' => 'bar'],                                  // , 'width' => '500', 'height' => '400'
+            'title' =>    ['text' => 'Venta Anual 2024', 'align' => 'left'],  //  eje x: 190 ,, text: document.getElementById('title-input').value
+           'subtitle' => ['text' => '(Eje y: # Trimestre)(Eje x : Millones de pesos)', 'align' => 'right'],
 
             // Leyenda del grafico
             'legend' => ['enabled' => false],
@@ -128,8 +187,9 @@ class ManipulateImagesController extends Controller
                     'data' => [0.75, 4.5, 4, 3]
                 ]
             ]
-        ];
+        ];   
 
+        
         // Enviar datos al servidor de Highcharts Export
         $response = Http::post('http://localhost:7801/', [
             'infile' => json_encode($chartOptions),
@@ -140,13 +200,14 @@ class ManipulateImagesController extends Controller
         if ($response->successful()) {
 
             // Guardar la imagen en storage/app/graficas/
-            Storage::disk('public')->put('highchartsGraficas/grafica-ventas.png', $response->body());
+            // Storage::disk('public')->put('highchartsGraficas/grafica-ventas.png', $response->body());
+            Storage::disk('public')->put('highchartsGraficas/barra.png', $response->body());
 
             return response()->json(['status' => 'ok', 'mensaje' => 'Gráfica generada correctamente.']);
 
         } else {
 
-            return response()->json(['status' => 'error', 'mensaje' => 'No se pudo generar la gráfica.']);
+            return response()->json(['status' => $response, 'mensaje' => 'No se pudo generar la gráfica.']);
 
         }
 
