@@ -6,27 +6,27 @@ namespace App\Clases\ChartsHighcharts;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
+// grid de colores
+use App\Clases\Colors;
+
 class ChartsHGC{
     /**
      * name , cadena de nombre y path que tendrá la imagen en guardada en el servidor
      * title , título que mostrará la gráfíca en la parte superior de la imagen
      * title_align , lugar en el que se ubicará el título de la imagen
      * subtitle , subítutlo que que mostrará la gráfíca en la parte inmediata inferior al título de imagen
-     * data , array de arrays con la data de los campos a gráficar [[ 'name'=> 'name1', 'y'=> 55.02 ], ]
+     * data , array de arrays con la data de los campos a gráficar [[ 'name':> 'name1', 'y':> 55.02 ], ]
      * subfijo , simbolo que acompañará el valor en la rebanada del valor,  '%' por deafult
      * extension , strings que indican la extención de la imagen jpg, png
      * 
      */
-    static public function pieHGC( $name='pie_s', $title='title', $title_align='center', $subtitle='subtitle', $data=[['name1'=> 'var1','y'=> 50],['name2'=> 'var2','y'=> 50]], $subfijo='%', $extension='png' ){
+    static public function pieHGC( $name='pie_s', $title='title', $title_align='center', $subtitle='subtitle', $data=[['name1'=> 'var1','y'=> 50],['name2'=> 'var2','y'=> 50], ['name3'=> 'var3','y'=> 50]], $subfijo='%', $extension='png' ){
         $chartOptions = [
             'chart'   => [ 'type'=> 'pie' ],
             'title'   => [ 'text'=> $name, 'align'=>$title_align],
             'tooltip' => [ 'valueSuffix'=> $subfijo ],
             'subtitle'=> [ 'text'=> $subtitle],
-            'colors' => [
-                '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
-                '#FF9655', '#FFF263', '#6AF9C4'
-            ],
+            'colors' => Colors::getColorgrid(9, false),
 
             'plotOptions'=> [
                 'pie'=> [
@@ -81,7 +81,7 @@ class ChartsHGC{
 
             Storage::disk('public')->put($nombre_imagen, $response->body());
 
-            // return response()->json(['status' => 1, 'mensaje' => $nombre_imagen]);
+            // return response()->json(['status' :> 1, 'mensaje' :> $nombre_imagen]);
             return json_encode(['status' => true, 'mensaje' => $nombre_imagen]);
 
         } else {
@@ -91,7 +91,5 @@ class ChartsHGC{
         }
 
     }
-
-
    
 }
