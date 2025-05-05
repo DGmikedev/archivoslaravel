@@ -1,2 +1,5 @@
-[0502/195030.074:INFO:CONSOLE(0)] "Uncaught (in promise) InvalidStateError: Cannot resume a context that has been closed", source: about:blank (0)
-[0502/195750.324:INFO:CONSOLE(0)] "Uncaught (in promise) InvalidStateError: Cannot resume a context that has been closed", source: about:blank (0)
+[0505/104828.390:INFO:CONSOLE(0)] "Uncaught (in promise) InvalidStateError: Cannot resume a context that has been closed", source: about:blank (0)
+[0505/131216.713:INFO:CONSOLE(0)] "Uncaught (in promise) InvalidStateError: Cannot resume a context that has been closed", source: about:blank (0)
+[0505/141943.936:INFO:CONSOLE(0)] "Uncaught (in promise) InvalidStateError: Cannot resume a context that has been closed", source: about:blank (0)
+[0505/143113.740:INFO:CONSOLE(0)] "Uncaught (in promise) InvalidStateError: Cannot resume a context that has been closed", source: about:blank (0)
+[0505/144009.635:INFO:CONSOLE(0)] "Uncaught (in promise) InvalidStateError: Cannot resume a context that has been closed", source: about:blank (0)

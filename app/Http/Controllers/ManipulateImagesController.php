@@ -148,7 +148,7 @@ class ManipulateImagesController extends Controller
            'subtitle' => ['text' => '(Eje y: # Trimestre)(Eje x : Millones de pesos)', 'align' => 'right'],
 
             // Leyenda del grafico
-            'legend' => ['enabled' => false],
+            'legend' => ['enabled' => true],
 
             // Colores en las series
             'plotOptions' => [

@@ -13,6 +13,20 @@ views("TcpdfViews.documento");  // vista del documento
 ![alt text](public/imgcat/tcpdf-documento.png)
 
 
+### reporte
+
+```php
+
+use App\Clases\TcpdfClases\TCPDFDocumento; // clase del documento
+
+Route::get('/tcpdf-reporte', [TcpdfController::class, "reporte"]);
+
+
+```
+![alt text](public/imgcat/tcpdf_reporte.png)
+
+
+
 
 ### factura
 
