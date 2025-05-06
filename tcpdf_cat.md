@@ -21,11 +21,10 @@ use App\Clases\TcpdfClases\TCPDFDocumento; // clase del documento
 
 Route::get('/tcpdf-reporte', [TcpdfController::class, "reporte"]);
 
+//view('TcpdfViews.reporte.header');
 
 ```
 ![alt text](public/imgcat/tcpdf_reporte.png)
-
-
 
 
 ### factura

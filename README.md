@@ -63,4 +63,7 @@
 [cátalogo dompdf](dompdf_cat.md)
 
 
+## SERVIDOR PARA CREAR GRÁFICAS EN BACKEND CON LA LIBRERíA HIGHCHARTS
+
+[Review servidor highcharts](highchart_server.md)
 

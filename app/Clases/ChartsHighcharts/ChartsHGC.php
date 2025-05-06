@@ -68,6 +68,7 @@ class ChartsHGC{
             ]
          ];
 
+        
         return ChartsHGC::sen2RenderHGC( json_encode($chartOptions), $name );
     }
 
@@ -149,7 +150,6 @@ class ChartsHGC{
 
             Storage::disk('public')->put($nombre_imagen, $response->body());
 
-            // return response()->json(['status' :> 1, 'mensaje' :> $nombre_imagen]);
             return json_encode(['status' => true, 'mensaje' => $nombre_imagen]);
 
         } else {
@@ -162,9 +162,13 @@ class ChartsHGC{
 
     // Borra las imagenes creadas anteriormente
     static public function deletegraphHGC($name){
+
         $nombre_imagen = 'highchartsGraficas/' . $name . '.png';
+
         Storage::disk('public')->delete($nombre_imagen);
+
         return json_encode(['status' => true, 'mensaje' => $nombre_imagen . ' Borrada']);
+
     }
    
 }

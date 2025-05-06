@@ -18,6 +18,8 @@ use App\Http\Controllers\Tcpdf\TcpdfController;
 # Es el controlador de las funciones de Manipulación de Imagenes
 use App\Http\Controllers\ManipulateImagesController;
 
+# Es el controlador de las funciones de los archivos .PPT (PowerPoint)
+use App\Http\Controllers\PPTController;
 
 
 Route::view('/', 'welcome');
@@ -53,9 +55,6 @@ Route::view('/', 'welcome');
 
 
 
-
-    
-
 // Templates de docuemntos en DOMPDF
 
     Route::get('/dompdf-factura',    [DompdfController::class, "factura"]);
@@ -73,4 +72,8 @@ Route::view('/', 'welcome');
     Route::get('/tcpdf-factura',   [TcpdfController::class, "factura"]);
     Route::get('/tcpdf-reporte',   [TcpdfController::class, "reporte"]);
 
+
+// Templates phpoffice/phppresentation
+
+ Route::get('/phpoffice-presentacion',[PPTController::class, 'presentacion']);  
 
