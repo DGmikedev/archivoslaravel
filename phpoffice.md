@@ -6,6 +6,8 @@
 
 Para crear un .pptx el servidor tiene que tener habilitado el zip
 
+Documentation: https://phppowerpoint.readthedocs.io/en/latest/intro.html
+
 # para habilitar ZipArchive
 
 ## En linux
