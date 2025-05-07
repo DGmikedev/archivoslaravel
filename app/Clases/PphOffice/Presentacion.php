@@ -10,7 +10,6 @@ use PhpOffice\PhpPresentation\Style\Borders;
 use PhpOffice\PhpPresentation\Style\Border;
 use PhpOffice\PhpPresentation\Slide\Background\Color as BackgroundColor;
 
-
 class Presentacion 
 {
 
@@ -59,15 +58,12 @@ class Presentacion
             ->setLineWidth(1)
             ->getColor()->setARGB('#000');
 
-            $texto_contenido = "Contenido de diapositiva: 
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vero recusandae ex tempore quia sunt deleniti eligendi ratione adipisci ab? Harum iusto quia facilis asperiores minima, repellat sapiente sit corporis.Consequuntur dolores neque numquam natus repellendus, dignissimos itaque quia? Est, placeat, voluptatem sint dolor mollitia iusto iure debitis at recusandae aperiam, ullam nam eveniet! Aliquid enim dicta itaque voluptas amet.Quis a quia, magnam delectus sed mollitia dicta praesentium sequi dolores sit ullam consectetur recusandae excepturi fugit odio nostrum ut harum nemo debitis iste, nobis impedit, animi saepe minima? Dicta!|| Harum iusto quia facilis asperiores minima, repellat sapiente sit corporis|| Harum iusto quia facilis asperiores minima, repellat sapiente sit corporis
+            $texto_contenido = "Contenido de diapositiva: Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua del latín, 'consecteur', en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de 'de Finnibus Bonorum et Malorum' (Los Extremos del Bien y El Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem Ipsum, 'Lorem ipsum dolor sit amet..', viene de una linea en la sección 1.10.32
             ";
 
             $shape2->getActiveParagraph()->getAlignment()->setHorizontal(Alignment::HORIZONTAL_JUSTIFY);
             $textRun = $shape2->createTextRun($texto_contenido);
             $textRun->getFont()->setBold(false)->setSize(24)->setColor(new Color(Color::COLOR_BLACK));
-
-
 
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -80,7 +76,6 @@ class Presentacion
            
            // Descargar el archivo
            return response()->download($tempFile)->deleteFileAfterSend(true);
-
 
     }
 }

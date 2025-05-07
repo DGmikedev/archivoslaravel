@@ -75,5 +75,8 @@ Route::view('/', 'welcome');
 
 // Templates phpoffice/phppresentation
 
- Route::get('/phpoffice-presentacion',[PPTController::class, 'presentacion']);  
+    Route::get('/phpoffice-presentacion', [PPTController::class, 'presentacion']);
+    Route::get('/phpoffice-presentacion2',[PPTController::class, 'presentacion2']);
+    Route::get('/phpoffice-presentacion3',[PPTController::class, 'presentacion3']);
+    Route::get('/phpoffice-presentacion4',[PPTController::class, 'presentacion4']);
 
