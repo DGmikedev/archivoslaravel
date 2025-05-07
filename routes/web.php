@@ -68,15 +68,23 @@ Route::view('/', 'welcome');
 
 // Template de documentos con TCPDF
 
-    Route::get('/tcpdf-documento', [TcpdfController::class, "documento"]);
-    Route::get('/tcpdf-factura',   [TcpdfController::class, "factura"]);
-    Route::get('/tcpdf-reporte',   [TcpdfController::class, "reporte"]);
+    Route::get('/tcpdf-documento', [ TcpdfController::class, "documento"]);
+    Route::get('/tcpdf-factura',   [ TcpdfController::class, "factura"  ]);
+    Route::get('/tcpdf-reporte',   [ TcpdfController::class, "reporte"  ]);
 
 
 // Templates phpoffice/phppresentation
 
-    Route::get('/phpoffice-presentacion', [PPTController::class, 'presentacion']);
-    Route::get('/phpoffice-presentacion2',[PPTController::class, 'presentacion2']);
-    Route::get('/phpoffice-presentacion3',[PPTController::class, 'presentacion3']);
-    Route::get('/phpoffice-presentacion4',[PPTController::class, 'presentacion4']);
+    Route::get('/phpoffice-presentaciondemo', [ PPTController::class, 'presentaciondemo']);
+    Route::get('/phpoffice-presentacion',     [ PPTController::class, 'presentacion'    ]);
+    Route::get('/phpoffice-presentacion2',    [ PPTController::class, 'presentacion2'   ]);
+    Route::get('/phpoffice-presentacion3',    [ PPTController::class, 'presentacion3'   ]);
+    Route::get('/phpoffice-presentacion4',    [ PPTController::class, 'presentacion4'   ]);
+    Route::get('/phpoffice-presentacion5',    [ PPTController::class, 'presentacion5'   ]);
+    Route::get('/phpoffice-presentacion6',    [ PPTController::class, 'presentacion6'   ]);
+    Route::get('/phpoffice-presentacion7',    [ PPTController::class, 'presentacion7'   ]);
+    Route::get('/phpoffice-presentacion8',    [ PPTController::class, 'presentacion8'   ]);
+    Route::get('/phpoffice-presentacion9',    [ PPTController::class, 'presentacion9'   ]);
+    Route::get('/phpoffice-presentacion10',   [ PPTController::class, 'presentacion10'  ]);
+
 
