@@ -21,7 +21,7 @@ class ChartsHGC{
      * extension , strings que indican la extención de la imagen jpg, png
      * 
      */
-    static public function pieHGC( $name='pie_s', $title='title', $title_align='center', $subtitle='subtitle', $data=[['name1'=> 'var1','y'=> 50],['name2'=> 'var2','y'=> 50], ['name3'=> 'var3','y'=> 50]], $colors='',  $subfijo='%' ){
+    static public function pieHGC( $name='pie', $title='title', $title_align='center', $subtitle='subtitle', $data=[['name'=> 'var1','y'=> 50],['name'=> 'var2','y'=> 50], ['name'=> 'var3','y'=> 50]], $colors=['#abebc6', '#82e0aa', '#28b463'],  $subfijo='%' ){
         $chartOptions = [
             'chart'   => [ 'type'=> 'pie' ],
             'title'   => [ 'text'=> $title, 'align'=>$title_align],

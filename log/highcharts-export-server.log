@@ -4771,3 +4771,498 @@ Mon May 05 2025 15:11:41 GMT-0600 [verbose] - [server] Closing all servers.
 Mon May 05 2025 15:11:41 GMT-0600 [notice] - [pool] Killing pool with all workers and closing browser.
 Mon May 05 2025 15:11:41 GMT-0600 [verbose] - [server] Closed server on port: 7801.
 Mon May 05 2025 15:11:41 GMT-0600 [notice] - [pool] Destroying pool entry 223680d5-baf6-4482-9a02-e8029122d84d.
+Wed May 07 2025 17:36:22 GMT-0600 [notice] - [process] Attaching exit listeners to the process.
+Wed May 07 2025 17:36:22 GMT-0600 [notice] - [cache] Dependency cache is up to date, proceeding.
+Wed May 07 2025 17:36:23 GMT-0600 [notice] - [cache] Writing a new manifest.
+Wed May 07 2025 17:36:23 GMT-0600 [notice] - [browser] Attempting to get a browser instance (try 1).
+Wed May 07 2025 17:36:23 GMT-0600 [notice] - [browser] Launched browser in shell mode.
+Wed May 07 2025 17:36:23 GMT-0600 [notice] - [pool] Initializing pool with workers: min 4, max 8.
+Wed May 07 2025 17:36:26 GMT-0600 [notice] - [pool] Successfully created a worker ef8759ed-4a79-4e2d-ad36-5e11433c3f6a - took 2399 ms.
+Wed May 07 2025 17:36:26 GMT-0600 [notice] - [pool] Successfully created a worker 7f290929-9f0f-400e-ab19-1a85b06f138b - took 486 ms.
+Wed May 07 2025 17:36:27 GMT-0600 [notice] - [pool] Successfully created a worker eac5f677-e4f5-49b8-99a0-c932cd47ec12 - took 501 ms.
+Wed May 07 2025 17:36:27 GMT-0600 [notice] - [pool] Successfully created a worker 92308196-701f-4f73-b965-d15da786d7e7 - took 482 ms.
+Wed May 07 2025 17:36:27 GMT-0600 [notice] - [server] Started HTTP server on 0.0.0.0:7801.
+Wed May 07 2025 17:36:27 GMT-0600 [notice] - [pool] The pool is ready with 4 initial resources waiting.
+Wed May 07 2025 17:36:27 GMT-0600 [verbose] - [pool] Releasing a worker with ID ef8759ed-4a79-4e2d-ad36-5e11433c3f6a. Clear page status: true.
+Wed May 07 2025 17:36:27 GMT-0600 [verbose] - [pool] Releasing a worker with ID 7f290929-9f0f-400e-ab19-1a85b06f138b. Clear page status: true.
+Wed May 07 2025 17:36:27 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 17:36:27 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:36:32 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 75ad6e4766c54742a8bacae08ba7d5fa.
+Wed May 07 2025 17:36:32 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:36:32 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:36:32 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:36:32 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:36:32 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:36:32 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:36:32 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:36:32 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:36:32 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:36:32 GMT-0600 [verbose] - [pool] Work completed in 255 ms.
+Wed May 07 2025 17:36:32 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:39:04 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 30cab6d9fcdc49929b08837d2cf08dc5.
+Wed May 07 2025 17:39:04 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:39:04 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:39:04 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:39:04 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:39:04 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:39:04 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:39:04 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:39:04 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:39:04 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:39:04 GMT-0600 [verbose] - [pool] Work completed in 159 ms.
+Wed May 07 2025 17:39:04 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:41:58 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 3c931314ebf54c34b8ab97581b229f34.
+Wed May 07 2025 17:41:58 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:41:58 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:41:58 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:41:58 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:41:58 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:41:58 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:41:58 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:41:58 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:41:58 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:41:58 GMT-0600 [verbose] - [pool] Work completed in 100 ms.
+Wed May 07 2025 17:41:58 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:42:58 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 269b908076ff447cafca1014945c8a8b.
+Wed May 07 2025 17:42:58 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:42:58 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:42:58 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:42:58 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:42:58 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:42:58 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:42:58 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:42:58 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:42:58 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:42:58 GMT-0600 [verbose] - [pool] Work completed in 96 ms.
+Wed May 07 2025 17:42:58 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:43:40 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:43:40 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 94eebe2ecb444efabb39d315a1820207.
+Wed May 07 2025 17:43:40 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:43:40 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:43:40 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:43:40 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:43:40 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:43:40 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:43:40 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:43:40 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:43:41 GMT-0600 [verbose] - [pool] Work completed in 111 ms.
+Wed May 07 2025 17:43:41 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:44:28 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID eb28bcd658244d969939ef8d7d8f20e8.
+Wed May 07 2025 17:44:28 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:44:28 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:44:28 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:44:28 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:44:28 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:44:28 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:44:28 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:44:28 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:44:28 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:44:28 GMT-0600 [verbose] - [pool] Work completed in 92 ms.
+Wed May 07 2025 17:44:28 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:46:25 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID bb6c73cdb5174fb5ac6d9463f3f72c82.
+Wed May 07 2025 17:46:25 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:46:25 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:46:25 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:46:25 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:46:25 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:46:25 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:46:25 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:46:25 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:46:25 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:46:26 GMT-0600 [verbose] - [pool] Work completed in 105 ms.
+Wed May 07 2025 17:46:26 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:47:13 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 5a29179b1feb4961b25113630abbba20.
+Wed May 07 2025 17:47:13 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:47:13 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:47:13 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:47:13 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:47:13 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:47:13 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:47:13 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:47:13 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:47:13 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:47:13 GMT-0600 [verbose] - [pool] Work completed in 117 ms.
+Wed May 07 2025 17:47:13 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:52:03 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 07c6b9bd957c47cf961d0a3f6869a640.
+Wed May 07 2025 17:52:03 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:52:03 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:52:03 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:52:03 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:52:03 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:52:03 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:52:03 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:52:03 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:52:03 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:52:03 GMT-0600 [verbose] - [pool] Work completed in 163 ms.
+Wed May 07 2025 17:52:03 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:52:21 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 61152c0b13404d1e95eb6ef7cc13c599.
+Wed May 07 2025 17:52:21 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:52:21 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:52:21 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:52:21 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:52:21 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:52:21 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:52:21 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:52:21 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:52:21 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:52:21 GMT-0600 [verbose] - [pool] Work completed in 108 ms.
+Wed May 07 2025 17:52:21 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:52:47 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 5e0e61c80b084b8499db583747c8b73a.
+Wed May 07 2025 17:52:47 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:52:47 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:52:47 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:52:47 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:52:47 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:52:47 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:52:47 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:52:47 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:52:47 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:52:47 GMT-0600 [verbose] - [pool] Work completed in 103 ms.
+Wed May 07 2025 17:52:47 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:53:20 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 7d26e9adc48847d3b72647c56fc82107.
+Wed May 07 2025 17:53:20 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:53:20 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:53:20 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:53:20 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:53:20 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:53:20 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:53:20 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:53:20 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:53:20 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:53:20 GMT-0600 [verbose] - [pool] Work completed in 127 ms.
+Wed May 07 2025 17:53:20 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:56:13 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 9e82431a43e0409ba5c8c4e3231f977c.
+Wed May 07 2025 17:56:13 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:56:13 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:56:13 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:56:13 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:56:13 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:56:13 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:56:13 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:56:13 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:56:13 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:56:13 GMT-0600 [verbose] - [pool] Work completed in 114 ms.
+Wed May 07 2025 17:56:13 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:56:43 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 94c07e05b4f3466c96c4b7afb1929949.
+Wed May 07 2025 17:56:43 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:56:43 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:56:43 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:56:43 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:56:43 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:56:43 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:56:43 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:56:43 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:56:43 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:56:43 GMT-0600 [verbose] - [pool] Work completed in 108 ms.
+Wed May 07 2025 17:56:43 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:57:18 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 6e652453875744cda7aa4fcd7f1a8578.
+Wed May 07 2025 17:57:18 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:57:18 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:57:18 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:57:18 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:57:18 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:57:18 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:57:18 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:57:18 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:57:18 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:57:18 GMT-0600 [verbose] - [pool] Work completed in 96 ms.
+Wed May 07 2025 17:57:18 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:57:34 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 59c041dc52a64fc0a8442dac8c3e1c0a.
+Wed May 07 2025 17:57:34 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:57:34 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:57:34 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:57:34 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:57:34 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:57:34 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:57:34 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:57:34 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:57:34 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:57:34 GMT-0600 [verbose] - [pool] Work completed in 120 ms.
+Wed May 07 2025 17:57:34 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:57:52 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 794e99f10913490db8dc25c242852981.
+Wed May 07 2025 17:57:52 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:57:52 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:57:52 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:57:52 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:57:52 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:57:52 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:57:52 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:57:52 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:57:52 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:57:52 GMT-0600 [verbose] - [pool] Work completed in 125 ms.
+Wed May 07 2025 17:57:52 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:58:23 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:58:23 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID f3da48a1e5ca40fda227bb136b276fba.
+Wed May 07 2025 17:58:23 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:58:23 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:58:23 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:58:23 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:58:23 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:58:23 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:58:23 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:58:23 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:58:23 GMT-0600 [verbose] - [pool] Work completed in 115 ms.
+Wed May 07 2025 17:58:23 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 17:58:59 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID e218b7a110e4456bb77a5877a18c09d8.
+Wed May 07 2025 17:58:59 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 17:58:59 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 17:58:59 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 17:58:59 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 17:58:59 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 17:58:59 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 17:58:59 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 17:58:59 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 17:58:59 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 17:58:59 GMT-0600 [verbose] - [pool] Work completed in 105 ms.
+Wed May 07 2025 17:58:59 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 18:02:24 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 312606c08fbd4daebacc7a7a35ebfd58.
+Wed May 07 2025 18:02:24 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:02:24 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:02:24 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:02:24 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:02:24 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 18:02:24 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:02:24 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:02:24 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:02:24 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:02:24 GMT-0600 [verbose] - [pool] Work completed in 96 ms.
+Wed May 07 2025 18:02:24 GMT-0600 [verbose] - [pool] Releasing a worker with ID 92308196-701f-4f73-b965-d15da786d7e7. Clear page status: true.
+Wed May 07 2025 18:04:17 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID dd3f78a355ff421fa07e8655a27ed11e.
+Wed May 07 2025 18:04:17 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:04:17 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:04:17 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:04:17 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:04:17 GMT-0600 [notice] - [pool] Worker failed validation: exceeded work limit (limit is 40).
+Wed May 07 2025 18:04:17 GMT-0600 [notice] - [pool] Destroying pool entry 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 18:04:17 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:04:17 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:04:17 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:04:17 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:04:17 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:04:17 GMT-0600 [verbose] - [pool] Destroyed a worker with ID 92308196-701f-4f73-b965-d15da786d7e7.
+Wed May 07 2025 18:04:17 GMT-0600 [verbose] - [pool] Work completed in 189 ms.
+Wed May 07 2025 18:04:17 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:10:01 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:10:01 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 88247ddbbbc144c7badfd856f88a373f.
+Wed May 07 2025 18:10:01 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:10:01 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:10:01 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:10:01 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:10:01 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:10:01 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:10:01 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:10:01 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:10:01 GMT-0600 [verbose] - [pool] Work completed in 104 ms.
+Wed May 07 2025 18:10:01 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:10:38 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 719fe600dce74fceae7bd509f67541c6.
+Wed May 07 2025 18:10:38 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:10:38 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:10:38 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:10:38 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:10:38 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:10:38 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:10:38 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:10:38 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:10:38 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:10:39 GMT-0600 [verbose] - [pool] Work completed in 110 ms.
+Wed May 07 2025 18:10:39 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:11:33 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:11:33 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 609dfc4e9b0547858900dd73a43a406f.
+Wed May 07 2025 18:11:33 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:11:33 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:11:33 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:11:33 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:11:33 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:11:33 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:11:33 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:11:33 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:11:33 GMT-0600 [verbose] - [pool] Work completed in 110 ms.
+Wed May 07 2025 18:11:33 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:12:55 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:12:55 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 7817785f4fa5442eabc5fa1f7918491f.
+Wed May 07 2025 18:12:55 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:12:55 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:12:55 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:12:55 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:12:55 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:12:55 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:12:55 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:12:55 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:12:55 GMT-0600 [verbose] - [pool] Work completed in 118 ms.
+Wed May 07 2025 18:12:55 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:13:35 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 01428f29bc1241c1938a82bff2d72606.
+Wed May 07 2025 18:13:35 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:13:35 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:13:35 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:13:35 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:13:35 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:13:35 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:13:35 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:13:35 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:13:35 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:13:35 GMT-0600 [verbose] - [pool] Work completed in 106 ms.
+Wed May 07 2025 18:13:35 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:17:50 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 0c606c159aa54db094ae1f3d9dc064be.
+Wed May 07 2025 18:17:50 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:17:50 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:17:50 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:17:50 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:17:50 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:17:50 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:17:50 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:17:50 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:17:50 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:17:50 GMT-0600 [verbose] - [pool] Work completed in 97 ms.
+Wed May 07 2025 18:17:50 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:22:17 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 1568c0e848ac40f38590a30fa638e1fc.
+Wed May 07 2025 18:22:17 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:22:17 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:22:17 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:22:17 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:22:17 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:22:17 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:22:17 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:22:17 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:22:17 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:22:17 GMT-0600 [verbose] - [pool] Work completed in 202 ms.
+Wed May 07 2025 18:22:17 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:23:25 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID abc45273943f471db16611aa2da0bf76.
+Wed May 07 2025 18:23:25 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:23:25 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:23:25 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:23:25 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:23:25 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:23:25 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:23:25 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:23:25 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:23:25 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:23:25 GMT-0600 [verbose] - [pool] Work completed in 105 ms.
+Wed May 07 2025 18:23:25 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:24:21 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 0535dee0528a4ceaabbc6b181788f403.
+Wed May 07 2025 18:24:21 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:24:21 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:24:21 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:24:21 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:24:21 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:24:21 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:24:21 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:24:21 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:24:21 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:24:21 GMT-0600 [verbose] - [pool] Work completed in 222 ms.
+Wed May 07 2025 18:24:21 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:24:48 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID bd22e97243434f3d92b36406b310a3ae.
+Wed May 07 2025 18:24:48 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:24:48 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:24:48 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:24:48 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:24:48 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:24:48 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:24:48 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:24:48 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:24:48 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:24:48 GMT-0600 [verbose] - [pool] Work completed in 106 ms.
+Wed May 07 2025 18:24:48 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:26:47 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 9e8eceefab604c09a7c3022209a385f1.
+Wed May 07 2025 18:26:47 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:26:47 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:26:47 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:26:47 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:26:47 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:26:47 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:26:47 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:26:47 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:26:47 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:26:47 GMT-0600 [verbose] - [pool] Work completed in 129 ms.
+Wed May 07 2025 18:26:47 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:27:40 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID aa3e7a23906e4313ad736812604ebb57.
+Wed May 07 2025 18:27:40 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:27:40 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:27:40 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:27:40 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:27:40 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:27:40 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:27:40 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:27:40 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:27:40 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:27:40 GMT-0600 [verbose] - [pool] Work completed in 114 ms.
+Wed May 07 2025 18:27:40 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:27:55 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 9893097d9c4d46baaba3c4ee17575633.
+Wed May 07 2025 18:27:55 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:27:55 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:27:55 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:27:55 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:27:55 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:27:55 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:27:55 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:27:55 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:27:55 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:27:55 GMT-0600 [verbose] - [pool] Work completed in 107 ms.
+Wed May 07 2025 18:27:55 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:28:10 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 7856b094a6b64291b9330d98a5b14aed.
+Wed May 07 2025 18:28:10 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:28:10 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:28:10 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:28:10 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:28:10 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:28:10 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:28:10 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:28:10 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:28:10 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:28:10 GMT-0600 [verbose] - [pool] Work completed in 131 ms.
+Wed May 07 2025 18:28:10 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:28:28 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID e4e5f04b31ff472183435be41edb70be.
+Wed May 07 2025 18:28:28 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:28:28 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:28:28 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:28:28 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:28:28 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:28:28 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:28:28 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:28:28 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:28:28 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:28:28 GMT-0600 [verbose] - [pool] Work completed in 98 ms.
+Wed May 07 2025 18:28:28 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:28:40 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 6872869bbaf3410cb4f1ce5b5e1e1bf4.
+Wed May 07 2025 18:28:40 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:28:40 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:28:40 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:28:40 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:28:40 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:28:40 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:28:40 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:28:40 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:28:40 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:28:40 GMT-0600 [verbose] - [pool] Work completed in 93 ms.
+Wed May 07 2025 18:28:40 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:30:55 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID c43d58ba80324b39b9986f851d98a4b9.
+Wed May 07 2025 18:30:55 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:30:55 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:30:55 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:30:55 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:30:55 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:30:55 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:30:55 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:30:55 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:30:55 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:30:56 GMT-0600 [verbose] - [pool] Work completed in 105 ms.
+Wed May 07 2025 18:30:56 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:31:42 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID cbeadfbcb1bb422796ee6afbc1c87f42.
+Wed May 07 2025 18:31:42 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 18:31:42 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 18:31:42 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 18:31:42 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 18:31:42 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 18:31:42 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 18:31:42 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 18:31:42 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 18:31:42 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 18:31:42 GMT-0600 [verbose] - [pool] Work completed in 113 ms.
+Wed May 07 2025 18:31:42 GMT-0600 [verbose] - [pool] Releasing a worker with ID eac5f677-e4f5-49b8-99a0-c932cd47ec12. Clear page status: true.
+Wed May 07 2025 18:33:55 GMT-0600 [verbose] - The SIGINT event with code: 2.
+Wed May 07 2025 18:33:55 GMT-0600 [verbose] - [server] Clearing all registered intervals.
+Wed May 07 2025 18:33:55 GMT-0600 [verbose] - [server] Closing all servers.
+Wed May 07 2025 18:33:55 GMT-0600 [notice] - [pool] Killing pool with all workers and closing browser.
+Wed May 07 2025 18:33:55 GMT-0600 [notice] - [pool] Destroying pool entry ef8759ed-4a79-4e2d-ad36-5e11433c3f6a.
+Wed May 07 2025 18:33:55 GMT-0600 [notice] - [pool] Destroying pool entry 7f290929-9f0f-400e-ab19-1a85b06f138b.
+Wed May 07 2025 18:33:55 GMT-0600 [verbose] - [server] Closed server on port: 7801.
+Wed May 07 2025 18:33:55 GMT-0600 [notice] - [pool] Destroying pool entry eac5f677-e4f5-49b8-99a0-c932cd47ec12.
