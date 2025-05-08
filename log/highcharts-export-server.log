@@ -5266,3 +5266,40 @@ Wed May 07 2025 18:33:55 GMT-0600 [notice] - [pool] Destroying pool entry ef8759
 Wed May 07 2025 18:33:55 GMT-0600 [notice] - [pool] Destroying pool entry 7f290929-9f0f-400e-ab19-1a85b06f138b.
 Wed May 07 2025 18:33:55 GMT-0600 [verbose] - [server] Closed server on port: 7801.
 Wed May 07 2025 18:33:55 GMT-0600 [notice] - [pool] Destroying pool entry eac5f677-e4f5-49b8-99a0-c932cd47ec12.
+Wed May 07 2025 19:10:24 GMT-0600 [notice] - [cache] Dependency cache is up to date, proceeding.
+Wed May 07 2025 19:10:24 GMT-0600 [notice] - [process] Attaching exit listeners to the process.
+Wed May 07 2025 19:10:24 GMT-0600 [notice] - [cache] Writing a new manifest.
+Wed May 07 2025 19:10:24 GMT-0600 [notice] - [browser] Attempting to get a browser instance (try 1).
+Wed May 07 2025 19:10:24 GMT-0600 [notice] - [browser] Launched browser in shell mode.
+Wed May 07 2025 19:10:24 GMT-0600 [notice] - [pool] Initializing pool with workers: min 4, max 8.
+Wed May 07 2025 19:10:25 GMT-0600 [notice] - [pool] Successfully created a worker 9a9eea92-b7e7-4598-a10a-b719838ef75f - took 541 ms.
+Wed May 07 2025 19:10:25 GMT-0600 [notice] - [pool] Successfully created a worker c5e3ee1d-d0b0-4359-9634-9009bb298b30 - took 460 ms.
+Wed May 07 2025 19:10:25 GMT-0600 [notice] - [pool] Successfully created a worker fd46317b-1f2c-4207-91a4-556edc2c0e85 - took 473 ms.
+Wed May 07 2025 19:10:26 GMT-0600 [notice] - [pool] Successfully created a worker 3f288b9b-e980-4996-af5e-c9cabac4853e - took 601 ms.
+Wed May 07 2025 19:10:26 GMT-0600 [notice] - [pool] The pool is ready with 4 initial resources waiting.
+Wed May 07 2025 19:10:26 GMT-0600 [notice] - [server] Started HTTP server on 0.0.0.0:7801.
+Wed May 07 2025 19:10:26 GMT-0600 [verbose] - [pool] Releasing a worker with ID 9a9eea92-b7e7-4598-a10a-b719838ef75f. Clear page status: true.
+Wed May 07 2025 19:10:26 GMT-0600 [verbose] - [pool] Releasing a worker with ID c5e3ee1d-d0b0-4359-9634-9009bb298b30. Clear page status: true.
+Wed May 07 2025 19:10:26 GMT-0600 [verbose] - [pool] Releasing a worker with ID fd46317b-1f2c-4207-91a4-556edc2c0e85. Clear page status: true.
+Wed May 07 2025 19:10:26 GMT-0600 [verbose] - [pool] Releasing a worker with ID 3f288b9b-e980-4996-af5e-c9cabac4853e. Clear page status: true.
+Wed May 07 2025 19:10:32 GMT-0600 [verbose] - [export] Got an incoming HTTP request with ID 39c7688dcad84bb8a4492b470655d29e.
+Wed May 07 2025 19:10:32 GMT-0600 [verbose] - [chart] Starting the exporting process.
+Wed May 07 2025 19:10:32 GMT-0600 [verbose] - [chart] Attempting to export from a raw input.
+Wed May 07 2025 19:10:32 GMT-0600 [verbose] - [pool] Work received, starting to process.
+Wed May 07 2025 19:10:32 GMT-0600 [verbose] - [pool] Acquired a worker handle.
+Wed May 07 2025 19:10:32 GMT-0600 [verbose] - [pool] Starting work on pool entry with ID 3f288b9b-e980-4996-af5e-c9cabac4853e.
+Wed May 07 2025 19:10:32 GMT-0600 [verbose] - [export] Determining export path.
+Wed May 07 2025 19:10:32 GMT-0600 [verbose] - [export] Treating as config.
+Wed May 07 2025 19:10:32 GMT-0600 [verbose] - [export] The current total size of data passed to a page is around 0.00 MB
+Wed May 07 2025 19:10:32 GMT-0600 [verbose] - [pool] Acquiring a worker handle.
+Wed May 07 2025 19:10:32 GMT-0600 [verbose] - [pool] Work completed in 225 ms.
+Wed May 07 2025 19:10:32 GMT-0600 [verbose] - [pool] Releasing a worker with ID 3f288b9b-e980-4996-af5e-c9cabac4853e. Clear page status: true.
+Wed May 07 2025 19:18:26 GMT-0600 [verbose] - The SIGINT event with code: 2.
+Wed May 07 2025 19:18:26 GMT-0600 [verbose] - [server] Clearing all registered intervals.
+Wed May 07 2025 19:18:26 GMT-0600 [notice] - [pool] Killing pool with all workers and closing browser.
+Wed May 07 2025 19:18:26 GMT-0600 [verbose] - [server] Closing all servers.
+Wed May 07 2025 19:18:26 GMT-0600 [notice] - [pool] Destroying pool entry 9a9eea92-b7e7-4598-a10a-b719838ef75f.
+Wed May 07 2025 19:18:26 GMT-0600 [verbose] - [server] Closed server on port: 7801.
+Wed May 07 2025 19:18:26 GMT-0600 [notice] - [pool] Destroying pool entry fd46317b-1f2c-4207-91a4-556edc2c0e85.
+Wed May 07 2025 19:18:26 GMT-0600 [notice] - [pool] Destroying pool entry c5e3ee1d-d0b0-4359-9634-9009bb298b30.
+Wed May 07 2025 19:18:26 GMT-0600 [notice] - [pool] Destroying pool entry 3f288b9b-e980-4996-af5e-c9cabac4853e.

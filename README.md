@@ -67,3 +67,5 @@
 
 [Review servidor highcharts](highchart_server.md)
 
+## CREADOR DE PRESENTACIONES POWERPOINT
+[Generador de Presentaciones powerpoint2007](phpoffice.md)
