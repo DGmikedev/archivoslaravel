@@ -38,7 +38,6 @@ use App\Clases\PphOffice\Presentacion10; # Presentación 10
 
 // Templates phpoffice/phppresentation
 
-    Route::get('/phpoffice-presentaciondemo', [ PPTController::class, 'presentaciondemo']);
     Route::get('/phpoffice-presentacion',     [ PPTController::class, 'presentacion'    ]);
     Route::get('/phpoffice-presentacion2',    [ PPTController::class, 'presentacion2'   ]);
     Route::get('/phpoffice-presentacion3',    [ PPTController::class, 'presentacion3'   ]);
