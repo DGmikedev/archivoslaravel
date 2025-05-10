@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+# Controller para la encriptación
+use App\Http\Controllers\EncripterController;
+
 # Controlador par la manipulación de los archivos PDF
 use App\Http\Controllers\ManipulatePDFController;
 
@@ -23,6 +26,11 @@ use App\Http\Controllers\PPTController;
 
 
 Route::view('/', 'welcome');
+
+
+// Encriptación
+
+    Route::get('/enc', [EncripterController::class, 'encriptacion']);
 
 // Fucniones para Manipular PDF
 # PDF -> Base64

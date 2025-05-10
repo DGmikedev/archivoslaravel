@@ -60,6 +60,12 @@ return [
             'report' => false,
         ],
 
+        'archivosprivados' => [
+            'driver' => 'local',
+            'root' => storage_path('app/archivosprivados'),
+            'visibility' => 'private',
+        ],
+
     ],
 
     /*
