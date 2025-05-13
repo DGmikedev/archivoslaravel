@@ -21,7 +21,7 @@ estás claves se encuentran en el documento .env las cuales se deben de ajustar 
         ]
 ```
 
-Encriptación de Archivos:
+### Encriptación de Archivos:
 
 ```php
 
@@ -68,6 +68,7 @@ Encriptación de Archivos:
 
 ```
 
+### Encriptador de cadenas de texto
 
 
 ```php
