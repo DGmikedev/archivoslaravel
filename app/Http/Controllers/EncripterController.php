@@ -21,7 +21,7 @@ class EncripterController extends Controller
 
     }
 
-    public function desencriptacion(){ 
+    public function desencriptacion(){
 
         $nombre_encriptado = "encriptacion/llavesServ198.enc";
         $nombre_desencriptado = "llavesServ198.xml";

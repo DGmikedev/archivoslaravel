@@ -62,8 +62,6 @@ Route::view('/', 'welcome');
         return Storage::download('graficas/grafica-ventas.svg');
     });
 
-
-
 // Templates de docuemntos en DOMPDF
 
     Route::get('/dompdf-factura',    [DompdfController::class, "factura"]);
