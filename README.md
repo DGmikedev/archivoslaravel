@@ -69,3 +69,6 @@
 
 ## CREADOR DE PRESENTACIONES POWERPOINT
 [Generador de Presentaciones powerpoint2007](phpoffice.md)
+
+## ECRIPTADOR DE ARCHIVOS
+[Descripción de las funciones de encriptado](encriptador.md)

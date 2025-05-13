@@ -20,7 +20,7 @@ class DesencriptadorArchivos
             // desencripta el archivo
             $data_descifrada = openssl_decrypt($data, 'aes-256-cbc', hex2bin(env('KEY32')), OPENSSL_RAW_DATA, hex2bin(env('IV')) );
 
-            // Guardar archivo cifrado (IV + datos cifrados)
+            // Guardar archivo descifrado (IV + datos cifrados)
             Storage::disk('archivosprivados')->put($nombre_desencriptado, $data_descifrada );
 
             // retorna el estatus y mensaje

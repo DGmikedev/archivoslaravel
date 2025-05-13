@@ -30,8 +30,10 @@ Route::view('/', 'welcome');
 
 // Encriptación
 
-    Route::get('/enc', [EncripterController::class, 'encriptacion']);
-    Route::get('/dec', [EncripterController::class, 'desencriptacion']);
+    Route::get('/enc',                      [EncripterController::class, 'encriptacion']);
+    Route::get('/dec',                      [EncripterController::class, 'desencriptacion']);
+    Route::get('/enctexto/{texto}',         [EncripterController::class, 'enctexto']);
+    Route::get('/dectexto/{texto_cifrado}', [EncripterController::class, 'decripttexto']);
 
 // Fucniones para Manipular PDF
 # PDF -> Base64

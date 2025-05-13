@@ -4,12 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Clases\websecurity\EncriptadorArchivos;
 use App\Clases\websecurity\DesencriptadorArchivos;
+use App\Clases\websecurity\encriptacionTexto\Encripttexto;
+use App\Clases\websecurity\encriptacionTexto\Decripttexto;
 
 
 use Illuminate\Http\Request;
 
 class EncripterController extends Controller
 {
+
+    public function  decripttexto($texto_cifrado){
+
+        $textDecr = Decripttexto::decripttexto($texto_cifrado);
+        return $textDecr;
+    }
+
+
+    public function enctexto($texto){
+
+        $textEncr = Encripttexto::encripttexto($texto);
+        return $textEncr;
+    }
 
     public function encriptacion(){
 
