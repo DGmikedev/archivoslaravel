@@ -8,65 +8,127 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Http\Response;
 use Symfony\Component\HttpFoundation\HeaderUtils;
+use Illuminate\Support\Facades\Storage;
 
 
 class XMLController extends Controller
 {
-   public function array2xml($name, $rfc){
+   public function array2xml($name, $manageout, $savecopi='no'){
 
         $xml = new GenerateXML();
 
-$data = [
-    '_attributes' => [
-        'xsi:schemaLocation' => 'http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd',
-        'Version' => '4.0',
-        'Serie' => 'Serie',
-        'Folio' => 'Folio',
-        'Fecha' => '2024-04-29T00:00:55',
-        'Sello' => 'ER/DbyaIj1uTFZH5bk5oaL5nGwSaYx7MEyJMk8BhDy/H/n6nUqweD4WYQEv+CW+4KUUowYEyDWLvreJ6zJXvqoZl2P6WJc+YHWUqsWPs7WhrilLyC2xBY8sPvsCitNR2kHzzmpd+I9LViIQ6aiZ78h5z2GHa4CoTuPEu4xivzaTthRcYC7n8tA2QjTVhQUJxPWCqG9HzG/VfXyJqvjqJPK4/yB898h2H3lvsYjZ59GaUZyD7J9EtXzhkxr7zJsR4g8A5lov1oGpvuEzxqfwSAXAGnM+AjcdLA20dssYXnDheGmv0eDFBmBS8ma0p3bdfEfa7RlTzRHyKbbuiM9iz/g==',
-        'CondicionesDePago' => 'CondicionesDePago',
-        'SubTotal' => '200',
-        'Moneda' => 'MXN',
-        'Total' => '199.96',
-        'TipoDeComprobante' => 'I',
-        'Exportacion' => '01',
-        'MetodoPago' => 'PPD',
-        'FormaPago' => '99',
-        'LugarExpedicion' => '20000',
-        'xmlns:cfdi' => 'http://www.sat.gob.mx/cfd/4',
-        'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
-        'NoCertificado' => '30001000000500003416',
-        'Certificado' => 'MIIFsDCCA5igAwIBAgIUMzAwMDEwMDAwMDA1MDAwMDM0MTYwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWxpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMjMwNTE4MTE0MzUxWhcNMjcwNTE4MTE0MzUxWjCB1zEnMCUGA1UEAxMeRVNDVUVMQSBLRU1QRVIgVVJHQVRFIFNBIERFIENWMScwJQYDVQQpEx5FU0NVRUxBIEtFTVBFUiBVUkdBVEUgU0EgREUgQ1YxJzAlBgNVBAoTHkVTQ1VFTEEgS0VNUEVSIFVSR0FURSBTQSBERSBDVjElMCMGA1UELRMcRUtVOTAwMzE3M0M5IC8gVkFEQTgwMDkyN0RKMzEeMBwGA1UEBRMVIC8gVkFEQTgwMDkyN0hTUlNSTDA1MRMwEQYDVQQLEwpTdWN1cnNhbCAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtmecO6n2GS0zL025gbHGQVxznPDICoXzR2uUngz4DqxVUC/w9cE6FxSiXm2ap8Gcjg7wmcZfm85EBaxCx/0J2u5CqnhzIoGCdhBPuhWQnIh5TLgj/X6uNquwZkKChbNe9aeFirU/JbyN7Egia9oKH9KZUsodiM/pWAH00PCtoKJ9OBcSHMq8Rqa3KKoBcfkg1ZrgueffwRLws9yOcRWLb02sDOPzGIm/jEFicVYt2Hw1qdRE5xmTZ7AGG0UHs+unkGjpCVeJ+BEBn0JPLWVvDKHZAQMj6s5Bku35+d/MyATkpOPsGT/VTnsouxekDfikJD1f7A1ZpJbqDpkJnss3vQIDAQABox0wGzAMBgNVHRMBAf8EAjAAMAsGA1UdDwQEAwIGwDANBgkqhkiG9w0BAQsFAAOCAgEAFaUgj5PqgvJigNMgtrdXZnbPfVBbukAbW4OGnUhNrA7SRAAfv2BSGk16PI0nBOr7qF2mItmBnjgEwk+DTv8Zr7w5qp7vleC6dIsZFNJoa6ZndrE/f7KO1CYruLXr5gwEkIyGfJ9NwyIagvHHMszzyHiSZIA850fWtbqtythpAliJ2jF35M5pNS+YTkRB+T6L/c6m00ymN3q9lT1rB03YywxrLreRSFZOSrbwWfg34EJbHfbFXpCSVYdJRfiVdvHnewN0r5fUlPtR9stQHyuqewzdkyb5jTTw02D2cUfL57vlPStBj7SEi3uOWvLrsiDnnCIxRMYJ2UA2ktDKHk+zWnsDmaeleSzonv2CHW42yXYPCvWi88oE1DJNYLNkIjua7MxAnkNZbScNw01A6zbLsZ3y8G6eEYnxSTRfwjd8EP4kdiHNJftm7Z4iRU7HOVh79/lRWB+gd171s3d/mI9kte3MRy6V8MMEMCAnMboGpaooYwgAmwclI2XZCczNWXfhaWe0ZS5PmytD/GDpXzkX0oEgY9K/uYo5V77NdZbGAjmyi8cE2B2ogvyaN2XfIInrZPgEffJ4AB7kFA2mwesdLOCh0BLD9itmCve3A1FGR4+stO2ANUoiI3w3Tv2yQSg4bjeDlJ08lXaaFCLW2peEXMXjQUk7fmpb5MNuOUTW6BE=',
-    ],
-    'cfdi:Emisor' => [
-        '_attributes' => [
-            'Rfc' => 'EKU9003173C9',
-            'Nombre' => 'ESCUELA KEMPER URGATE',
-            'RegimenFiscal' => '601'
-        ]
-    ],
-    'cfdi:Receptor' => [
-        '_attributes' => [
-            'Rfc' => 'URE180429TM6',
-            'Nombre' => 'UNIVERSIDAD ROBOTICA ESPAÑOLA',
-            'DomicilioFiscalReceptor' => '86991',
-            'RegimenFiscalReceptor' => '601',
-            'UsoCFDI' => 'G01'
-        ]
-    ],
-    'cfdi:Conceptos' => [
-        'cfdi:Concepto' => [
+        $data = [
             '_attributes' => [
-                'ClaveProdServ' => '50211503',
-                'Cantidad' => '1',
-                'ClaveUnidad' => 'H87',
-                'Unidad' => 'Pieza',
-                'Descripcion' => 'Cigarros',
-                'ValorUnitario' => '200.00',
-                'Importe' => '200.00',
-                'ObjetoImp' => '02',
+                'xsi:schemaLocation' => 'http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd',
+                'Version' => '4.0',
+                'Serie' => 'Serie',
+                'Folio' => 'Folio',
+                'Fecha' => '2024-04-29T00:00:55',
+                'Sello' => 'ER/DbyaIj1uTFZH5bk5oaL5nGwSaYx7MEyJMk8BhDy/H/n6nUqweD4WYQEv+CW+4KUUowYEyDWLvreJ6zJXvqoZl2P6WJc+YHWUqsWPs7WhrilLyC2xBY8sPvsCitNR2kHzzmpd+I9LViIQ6aiZ78h5z2GHa4CoTuPEu4xivzaTthRcYC7n8tA2QjTVhQUJxPWCqG9HzG/VfXyJqvjqJPK4/yB898h2H3lvsYjZ59GaUZyD7J9EtXzhkxr7zJsR4g8A5lov1oGpvuEzxqfwSAXAGnM+AjcdLA20dssYXnDheGmv0eDFBmBS8ma0p3bdfEfa7RlTzRHyKbbuiM9iz/g==',
+                'CondicionesDePago' => 'CondicionesDePago',
+                'SubTotal' => '200',
+                'Moneda' => 'MXN',
+                'Total' => '199.96',
+                'TipoDeComprobante' => 'I',
+                'Exportacion' => '01',
+                'MetodoPago' => 'PPD',
+                'FormaPago' => '99',
+                'LugarExpedicion' => '20000',
+                'xmlns:cfdi' => 'http://www.sat.gob.mx/cfd/4',
+                'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
+                'NoCertificado' => '30001000000500003416',
+                'Certificado' => 'MIIFsDCCA5igAwIBAgIUMzAwMDEwMDAwMDA1MDAwMDM0MTYwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWxpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMjMwNTE4MTE0MzUxWhcNMjcwNTE4MTE0MzUxWjCB1zEnMCUGA1UEAxMeRVNDVUVMQSBLRU1QRVIgVVJHQVRFIFNBIERFIENWMScwJQYDVQQpEx5FU0NVRUxBIEtFTVBFUiBVUkdBVEUgU0EgREUgQ1YxJzAlBgNVBAoTHkVTQ1VFTEEgS0VNUEVSIFVSR0FURSBTQSBERSBDVjElMCMGA1UELRMcRUtVOTAwMzE3M0M5IC8gVkFEQTgwMDkyN0RKMzEeMBwGA1UEBRMVIC8gVkFEQTgwMDkyN0hTUlNSTDA1MRMwEQYDVQQLEwpTdWN1cnNhbCAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtmecO6n2GS0zL025gbHGQVxznPDICoXzR2uUngz4DqxVUC/w9cE6FxSiXm2ap8Gcjg7wmcZfm85EBaxCx/0J2u5CqnhzIoGCdhBPuhWQnIh5TLgj/X6uNquwZkKChbNe9aeFirU/JbyN7Egia9oKH9KZUsodiM/pWAH00PCtoKJ9OBcSHMq8Rqa3KKoBcfkg1ZrgueffwRLws9yOcRWLb02sDOPzGIm/jEFicVYt2Hw1qdRE5xmTZ7AGG0UHs+unkGjpCVeJ+BEBn0JPLWVvDKHZAQMj6s5Bku35+d/MyATkpOPsGT/VTnsouxekDfikJD1f7A1ZpJbqDpkJnss3vQIDAQABox0wGzAMBgNVHRMBAf8EAjAAMAsGA1UdDwQEAwIGwDANBgkqhkiG9w0BAQsFAAOCAgEAFaUgj5PqgvJigNMgtrdXZnbPfVBbukAbW4OGnUhNrA7SRAAfv2BSGk16PI0nBOr7qF2mItmBnjgEwk+DTv8Zr7w5qp7vleC6dIsZFNJoa6ZndrE/f7KO1CYruLXr5gwEkIyGfJ9NwyIagvHHMszzyHiSZIA850fWtbqtythpAliJ2jF35M5pNS+YTkRB+T6L/c6m00ymN3q9lT1rB03YywxrLreRSFZOSrbwWfg34EJbHfbFXpCSVYdJRfiVdvHnewN0r5fUlPtR9stQHyuqewzdkyb5jTTw02D2cUfL57vlPStBj7SEi3uOWvLrsiDnnCIxRMYJ2UA2ktDKHk+zWnsDmaeleSzonv2CHW42yXYPCvWi88oE1DJNYLNkIjua7MxAnkNZbScNw01A6zbLsZ3y8G6eEYnxSTRfwjd8EP4kdiHNJftm7Z4iRU7HOVh79/lRWB+gd171s3d/mI9kte3MRy6V8MMEMCAnMboGpaooYwgAmwclI2XZCczNWXfhaWe0ZS5PmytD/GDpXzkX0oEgY9K/uYo5V77NdZbGAjmyi8cE2B2ogvyaN2XfIInrZPgEffJ4AB7kFA2mwesdLOCh0BLD9itmCve3A1FGR4+stO2ANUoiI3w3Tv2yQSg4bjeDlJ08lXaaFCLW2peEXMXjQUk7fmpb5MNuOUTW6BE=',
+            ],
+            'cfdi:Emisor' => [
+                '_attributes' => [
+                    'Rfc' => 'EKU9003173C9',
+                    'Nombre' => 'ESCUELA KEMPER URGATE',
+                    'RegimenFiscal' => '601'
+                ]
+            ],
+            'cfdi:Receptor' => [
+                '_attributes' => [
+                    'Rfc' => 'URE180429TM6',
+                    'Nombre' => 'UNIVERSIDAD ROBOTICA ESPAÑOLA',
+                    'DomicilioFiscalReceptor' => '86991',
+                    'RegimenFiscalReceptor' => '601',
+                    'UsoCFDI' => 'G01'
+                ]
+            ],
+            'cfdi:Conceptos' => [
+                'cfdi:Concepto' => [
+                    '_attributes' => [
+                        'ClaveProdServ' => '50211503',
+                        'Cantidad' => '1',
+                        'ClaveUnidad' => 'H87',
+                        'Unidad' => 'Pieza',
+                        'Descripcion' => 'Cigarros',
+                        'ValorUnitario' => '200.00',
+                        'Importe' => '200.00',
+                        'ObjetoImp' => '02',
+                    ],
+                    'cfdi:Impuestos' => [
+                        'cfdi:Traslados' => [
+                            'cfdi:Traslado' => [
+                                '_attributes' => [
+                                    'Base' => '1',
+                                    'Importe' => '0.16',
+                                    'Impuesto' => '002',
+                                    'TasaOCuota' => '0.160000',
+                                    'TipoFactor' => 'Tasa'
+                                ]
+                            ]
+                        ],
+                        'cfdi:Retenciones' => [
+                            [
+                                'cfdi:Retencion' => [
+                                    '_attributes' => [
+                                        'Base' => '1',
+                                        'Impuesto' => '001',
+                                        'TipoFactor' => 'Tasa',
+                                        'TasaOCuota' => '0.100000',
+                                        'Importe' => '0.10'
+                                    ]
+                                ]
+                            ],
+                            [
+                                'cfdi:Retencion' => [
+                                    '_attributes' => [
+                                        'Base' => '1',
+                                        'Impuesto' => '002',
+                                        'TipoFactor' => 'Tasa',
+                                        'TasaOCuota' => '0.106666',
+                                        'Importe' => '0.10'
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
             ],
             'cfdi:Impuestos' => [
+                '_attributes' => [
+                    'TotalImpuestosRetenidos' => '0.20',
+                    'TotalImpuestosTrasladados' => '0.16'
+                ],
+                'cfdi:Retenciones' => [
+                    [
+                        'cfdi:Retencion' => [
+                            '_attributes' => [
+                                'Impuesto' => '001',
+                                'Importe' => '0.10'
+                            ]
+                        ]
+                    ],
+                    [
+                        'cfdi:Retencion' => [
+                            '_attributes' => [
+                                'Impuesto' => '002',
+                                'Importe' => '0.10'
+                            ]
+                        ]
+                    ]
+                ],
                 'cfdi:Traslados' => [
                     'cfdi:Traslado' => [
                         '_attributes' => [
@@ -77,106 +139,55 @@ $data = [
                             'TipoFactor' => 'Tasa'
                         ]
                     ]
-                ],
-                'cfdi:Retenciones' => [
-                    [
-                        'cfdi:Retencion' => [
-                            '_attributes' => [
-                                'Base' => '1',
-                                'Impuesto' => '001',
-                                'TipoFactor' => 'Tasa',
-                                'TasaOCuota' => '0.100000',
-                                'Importe' => '0.10'
-                            ]
-                        ]
-                    ],
-                    [
-                        'cfdi:Retencion' => [
-                            '_attributes' => [
-                                'Base' => '1',
-                                'Impuesto' => '002',
-                                'TipoFactor' => 'Tasa',
-                                'TasaOCuota' => '0.106666',
-                                'Importe' => '0.10'
-                            ]
-                        ]
-                    ]
-                ]
-            ]
-        ]
-    ],
-    'cfdi:Impuestos' => [
-        '_attributes' => [
-            'TotalImpuestosRetenidos' => '0.20',
-            'TotalImpuestosTrasladados' => '0.16'
-        ],
-        'cfdi:Retenciones' => [
-            [
-                'cfdi:Retencion' => [
-                    '_attributes' => [
-                        'Impuesto' => '001',
-                        'Importe' => '0.10'
-                    ]
                 ]
             ],
-            [
-                'cfdi:Retencion' => [
+            'cfdi:Complemento' => [
+                'tfd:TimbreFiscalDigital' => [
                     '_attributes' => [
-                        'Impuesto' => '002',
-                        'Importe' => '0.10'
+                        'xsi:schemaLocation' => 'http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd',
+                        'Version' => '1.1',
+                        'UUID' => '3ea43e97-71bf-4ac5-a28e-9374ea9f8b45',
+                        'FechaTimbrado' => '2024-04-29T10:46:30',
+                        'RfcProvCertif' => 'SPR190613I52',
+                        'SelloCFD' => 'ER/DbyaIj1uTFZH5bk5oaL5nGwSaYx7MEyJMk8BhDy/H/n6nUqweD4WYQEv+CW+4KUUowYEyDWLvreJ6zJXvqoZl2P6WJc+YHWUqsWPs7WhrilLyC2xBY8sPvsCitNR2kHzzmpd+I9LViIQ6aiZ78h5z2GHa4CoTuPEu4xivzaTthRcYC7n8tA2QjTVhQUJxPWCqG9HzG/VfXyJqvjqJPK4/yB898h2H3lvsYjZ59GaUZyD7J9EtXzhkxr7zJsR4g8A5lov1oGpvuEzxqfwSAXAGnM+AjcdLA20dssYXnDheGmv0eDFBmBS8ma0p3bdfEfa7RlTzRHyKbbuiM9iz/g==',
+                        'NoCertificadoSAT' => '30001000000500003456',
+                        'SelloSAT' => 'MIIFsDCCA5igAwIBAgIUMzAwMDEwMDAwMDA1MDAwMDM0MTYwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWxpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMjMwNTE4MTE0MzUxWhcNMjcwNTE4MTE0MzUxWjCB1zEnMCUGA1UEAxMeRVNDVUVMQSBLRU1QRVIgVVJHQVRFIFNBIERFIENWMScwJQYDVQQpEx5FU0NVRUxBIEtFTVBFUiBVUkdBVEUgU0EgREUgQ1YxJzAlBgNVBAoTHkVTQ1VFTEEgS0VNUEVSIFVSR0FURSBTQSBERSBDVjElMCMGA1UELRMcRUtVOTAwMzE3M0M5IC8gVkFEQTgwMDkyN0RKMzEeMBwGA1UEBRMVIC8gVkFEQTgwMDkyN0hTUlNSTDA1MRMwEQYDVQQLEwpTdWN1cnNhbCAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtmecO6n2GS0zL025gbHGQVxznPDICoXzR2uUngz4DqxVUC/w9cE6FxSiXm2ap8Gcjg7wmcZfm85EBaxCx/0J2u5CqnhzIoGCdhBPuhWQnIh5TLgj/X6uNquwZkKChbNe9aeFirU/JbyN7Egia9oKH9KZUsodiM/pWAH00PCtoKJ9OBcSHMq8Rqa3KKoBcfkg1ZrgueffwRLws9yOcRWLb02sDOPzGIm/jEFicVYt2Hw1qdRE5xmTZ7AGG0UHs+unkGjpCVeJ+BEBn0JPLWVvDKHZAQMj6s5Bku35+d/MyATkpOPsGT/VTnsouxekDfikJD1f7A1ZpJbqDpkJnss3vQIDAQABox0wGzAMBgNVHRMBAf8EAjAAMAsGA1UdDwQEAwIGwDANBgkqhkiG9w0BAQsFAAOCAgEAFaUgj5PqgvJigNMgtrdXZnbPfVBbukAbW4OGnUhNrA7SRAAfv2BSGk16PI0nBOr7qF2mItmBnjgEwk+DTv8Zr7w5qp7vleC6dIsZFNJoa6ZndrE/f7KO1CYruLXr5gwEkIyGfJ9NwyIagvHHMszzyHiSZIA850fWtbqtythpAliJ2jF35M5pNS+YTkRB+T6L/c6m00ymN3q9lT1rB03YywxrLreRSFZOSrbwWfg34EJbHfbFXpCSVYdJRfiVdvHnewN0r5fUlPtR9stQHyuqewzdkyb5jTTw02D2cUfL57vlPStBj7SEi3uOWvLrsiDnnCIxRMYJ2UA2ktDKHk+zWnsDmaeleSzonv2CHW42yXYPCvWi88oE1DJNYLNkIjua7MxAnkNZbScNw01A6zbLsZ3y8G6eEYnxSTRfwjd8EP4kdiHNJftm7Z4iRU7HOVh79/lRWB+gd171s3d/mI9kte3MRy6V8MMEMCAnMboGpaooYwgAmwclI2XZCczNWXfhaWe0ZS5PmytD/GDpXzkX0oEgY9K/uYo5V77NdZbGAjmyi8cE2B2ogvyaN2XfIInrZPgEffJ4AB7kFA2mwesdLOCh0BLD9itmCve3A1FGR4+stO2ANUoiI3w3Tv2yQSg4bjeDlJ08lXaaFCLW2peEXMXjQUk7fmpb5MNuOUTW6BE=',
+                        'xmlns:tfd' => 'http://www.sat.gob.mx/TimbreFiscalDigital',
+                        'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance'
                     ]
                 ]
             ]
-        ],
-        'cfdi:Traslados' => [
-            'cfdi:Traslado' => [
-                '_attributes' => [
-                    'Base' => '1',
-                    'Importe' => '0.16',
-                    'Impuesto' => '002',
-                    'TasaOCuota' => '0.160000',
-                    'TipoFactor' => 'Tasa'
-                ]
-            ]
-        ]
-    ],
-    'cfdi:Complemento' => [
-        'tfd:TimbreFiscalDigital' => [
-            '_attributes' => [
-                'xsi:schemaLocation' => 'http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd',
-                'Version' => '1.1',
-                'UUID' => '3ea43e97-71bf-4ac5-a28e-9374ea9f8b45',
-                'FechaTimbrado' => '2024-04-29T10:46:30',
-                'RfcProvCertif' => 'SPR190613I52',
-                'SelloCFD' => '...tu_sello...',
-                'NoCertificadoSAT' => '30001000000500003456',
-                'SelloSAT' => '...selloSAT...',
-                'xmlns:tfd' => 'http://www.sat.gob.mx/TimbreFiscalDigital',
-                'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance'
-            ]
-        ]
-    ]
-];
+        ];
 
-$root = [
-    'rootElementName' => 'cfdi:Comprobante',
-    '_attributes' => $data['_attributes']
-];
+        $root = [
+            'rootElementName' => 'cfdi:Comprobante',
+            '_attributes' => $data['_attributes']
+        ];
 
- $d = true;
-$codificacion = 'utf-8';
+        $d = true;
 
+        $codificacion = 'utf-8';
+
+        // get the xml data 
         $outxml = $xml->xmlfromarray($data, $root, $d, $codificacion);
 
 
+        // Save a copy at Storage/app/xmlout
+        if ($savecopi == 'yes'){
 
+            $path_xml = "xmlout/$name";
 
-        $fallback = str_replace('%', '', Str::ascii("XMLOUT.xml"));
+            Storage::put($path_xml,$outxml);
+
+        }
+
+        $filename = $name;
+        
+        $fallback = str_replace('%', '', Str::ascii($filename));
 
         return new Response($outxml, 200, [
                 'Content-Type' => 'application/xml',
-                'Content-Disposition' => HeaderUtils::makeDisposition('inline', "XMLOUT.xml", $fallback),
+                'Content-Disposition' => HeaderUtils::makeDisposition($manageout, $filename, $fallback),
             ]);
-
-   }
+    }
 }

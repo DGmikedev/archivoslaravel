@@ -72,3 +72,6 @@
 
 ## ECRIPTADOR DE ARCHIVOS
 [Descripción de las funciones de encriptado](encriptador.md)
+
+## ARRAY A XML
+[Descripción del funcionamiento para la generación de XML](xml.md)

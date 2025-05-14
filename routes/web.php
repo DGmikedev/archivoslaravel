@@ -33,7 +33,11 @@ Route::view('/', 'welcome');
 
 // XML
 
-    Route::get('/arr2xml/{name}/{rfc}', [XMLController::class, 'array2xml']);
+    # Genera documento en xml a partir de una array y lo muestra o descarga
+    # name: nombre del docuemnto con extencio .xml
+    # manageout: attachment, inline = attachment: descargar docuemnto, inline: mostrar en el navegador
+    # savecopy: gurada un copia en ele servidor en este path Storage/app/xmlout = 'yes' para que se guarde
+    Route::get('/arr2xml/{name}/{manageout}/{savecopi?}', [XMLController::class, 'array2xml']);
 
 
 // Encriptación
