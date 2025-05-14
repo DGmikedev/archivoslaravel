@@ -24,8 +24,16 @@ use App\Http\Controllers\ManipulateImagesController;
 # Es el controlador de las funciones de los archivos .PPT (PowerPoint)
 use App\Http\Controllers\PPTController;
 
+# Controlador para datos xml
+use App\Http\Controllers\XMLController;
+
 
 Route::view('/', 'welcome');
+
+
+// XML
+
+    Route::get('/arr2xml/{name}/{rfc}', [XMLController::class, 'array2xml']);
 
 
 // Encriptación

@@ -14,11 +14,11 @@ estás claves se encuentran en el documento .env las cuales se deben de ajustar 
 
 ```php
 
-     'archivosprivados' => [
-            'driver' => 'local',
-            'root' => storage_path('app/archivosprivados'),
-            'visibility' => 'private',
-        ]
+    'archivosprivados' => [
+           'driver' => 'local',
+           'root' => storage_path('app/archivosprivados'),
+           'visibility' => 'private',
+       ]
 ```
 
 ### Encriptación de Archivos:
