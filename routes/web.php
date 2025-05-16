@@ -17,7 +17,6 @@ use App\Http\Controllers\Fpdf\FpdfController;
 # Es el controlador de las funciones de la librería TCPDF
 use App\Http\Controllers\Tcpdf\TcpdfController;
     
-
 # Es el controlador de las funciones de Manipulación de Imagenes
 use App\Http\Controllers\ManipulateImagesController;
 
