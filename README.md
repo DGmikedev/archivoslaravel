@@ -27,6 +27,11 @@
     Route::post('/pdf2base64', [ManipulatePDFController::class, "pdf2base64"]);
 
 ```
+# GENERADOR DE ARCHVIO EXCEL
+
+## PHPOFFICE / SPREADSHEET
+
+[Generador de archivos Excel](spreadsheet.md)
 
 # LIBRERÍAS PARA GENERAR DOCUEMNTOS PDF 
 

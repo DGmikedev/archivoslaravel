@@ -26,6 +26,9 @@ use App\Http\Controllers\PPTController;
 # Controlador para datos xml
 use App\Http\Controllers\XMLController;
 
+# Controlador para docuemntos excel
+use App\Http\Controllers\SpreadSheetController;
+
 
 Route::view('/', 'welcome');
 
@@ -92,6 +95,10 @@ Route::view('/', 'welcome');
     Route::get('/tcpdf-factura',   [ TcpdfController::class, "factura"  ]);
     Route::get('/tcpdf-reporte',   [ TcpdfController::class, "reporte"  ]);
 
+
+// Templates phpoffice/SpreadSheet
+
+    Route::get('/phpoffice-spreadsheet', [SpreadSheetController::class, 'excel']);
 
 // Templates phpoffice/phppresentation
 
