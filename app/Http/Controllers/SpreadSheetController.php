@@ -12,6 +12,25 @@ class SpreadSheetController extends Controller
 
         $titulo = "Ventas por mes";
 
+            $datos = [
+                ['', 'ENERO', 'FEBERRO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBER', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'],
+                ['Producto A', 10, 20, 30, 35, 20, 40, 20, 60, 30, 10, 30, 20 ],
+                ['Producto B', 15, 25, 35, 10, 5, 30, 20, 80, 10, 15, 20, 12 ],
+            ];
+
+            $poscicion_grafico = ['B5', 'P19'];
+            $poscicionSeries   = ['C2', 'O2'];
+            $poscicionDatos    = ['D3', 'O3'];
+            $poscicionDatos2   = ['D4', 'O4'];
+
+        $linea = new CatGraficoSpreadSheet();
+
+        return $linea->catalogo($titulo, $datos, $poscicion_grafico);
+
+
+    }
+
+    /*
         $datos = [ ['B6', 'MES'],['C6', 'CANTIDAD'], // titulos de columnas
 
                         ['B7', 'ENERO'],['B8', 'FEBERRO'],['B9', 'MARZO'],['B10', 'ABRIL'],['B11', 'MAYO'], // Meses
@@ -21,13 +40,8 @@ class SpreadSheetController extends Controller
                         ['C7', 50],['C8', 10],['C9', 30],['C10',20],['C11',50],['C12',10],   // Valores por mes
                         ['C13',60],['C14',20],['C15',40],['C16',30],['C17',10],['C18',20]  
                     ];
+*/
 
-        $linea = new CatGraficoSpreadSheet();
-
-        return $linea->catalogo($titulo, $datos);
-
-
-    }
     public function excel(){
 
         $xcel = new HojaExcel();
@@ -98,7 +112,6 @@ class SpreadSheetController extends Controller
         $nombre = "UsuariosSistema";
 
         return $xcel->crearhoja($nombre, $cabeceras, $datos);
-        // return "Hola Exce!";
 
     }
 }

@@ -20,60 +20,54 @@ class GraficoSpreadSheet
 
 
     // !$A$2:$A$4   ,,, $B$2:$B$4
-    static public function GraficoLinea($string, $number){
+    static public function GraficoLinea($spreadsheet, $datos, $titulo, $poscicion_grafico){
 
-        $categories = new DataSeriesValues("$string[0]", "Worksheet!$string[1]:$string[2]");
-        $values = new DataSeriesValues("$number[0]", "Worksheet!$number[1]:$number[2]");
+        $sheet = $spreadsheet->getActiveSheet();
 
+        // Insertar datos
+        $sheet->fromArray($datos, null, 'C2');
+
+        // Definir los valores del eje X (categorías)
+        $categories = [
+            new DataSeriesValues('String', 'Worksheet!$B$1:$M$1', null, 3),
+        ];
+
+        // Definir los valores del eje Y (series de datos)
+        $values = [
+            new DataSeriesValues('Number', 'Worksheet!$B$2:$M$2', null, 3),
+            new DataSeriesValues('Number', 'Worksheet!$B$3:$M$3', null, 3),
+        ];
+
+        // Crear la serie de datos para un gráfico de líneas
         $series = new DataSeries(
-            DataSeries::TYPE_LINECHART,
-            null,
-            [0],
-            [$categories],
-            null,
-            [$values]
+            DataSeries::TYPE_LINECHART,      // Tipo de gráfico
+            DataSeries::GROUPING_STANDARD,   // Agrupación
+            range(0, count($values) - 1),    // Indexes
+            [],                              // Labels
+            $categories,                     // Categorías
+            $values                          // Valores
         );
 
-        // invertir sentido del eje Y (vertical)
-        $series->setPlotDirection(DataSeries::DIRECTION_COL);
-        
-        // Área de dibujo
+        // Crear área del gráfico y leyenda
         $plotArea = new PlotArea(null, [$series]);
-
-         // Leyenda y título
         $legend = new Legend(Legend::POSITION_RIGHT, null, false);
-        $title = new Title('USUARIOS');
-
+            
         // Crear el gráfico
         $chart = new Chart(
-            'grafico1',
-            $title,
-            $legend,
-            $plotArea,
-            true,
-            0,
-            null,
-            null
+            'LineChart',                     // Nombre
+            new Title($titulo),    // Título del gráfico
+            $legend,                         // Leyenda
+            $plotArea,                       // Área de datos
+            true,                            // Plot visible
+            0, null, null
         );
+        
+        // Posicionar el gráfico en la hoja
+        $chart->setTopLeftPosition($poscicion_grafico[0]);
+        $chart->setBottomRightPosition($poscicion_grafico[1]);
 
         return $chart;
 
-        // Establecer posición del gráfico en la hoja
-        // $chart->setTopLeftPosition('E6');
-        // $chart->setBottomRightPosition('M18');
-
-        /*
-        // Crear el gráfico como columnas
-        $series = new DataSeries(
-            DataSeries::TYPE_BARCHART,     // Tipo: columnas
-            DataSeries::GROUPING_CLUSTERED, // Agrupación: agrupadas
-            range(0, count([$values]) - 1),
-            [],
-            [$categories],
-            [$values]
-        ); */
-
-        // return $graficolinea;
     }
 
 
