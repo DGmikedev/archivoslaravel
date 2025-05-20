@@ -4,9 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Clases\PphOffice\phpSpreadsheet\HojaExcel;
+use App\Clases\PphOffice\phpSpreadsheet\CatGraficoSpreadSheet;
 
 class SpreadSheetController extends Controller
 {
+    public function catalogo(){
+
+        $titulo = "Ventas por mes";
+
+        $datos = [ ['B6', 'MES'],['C6', 'CANTIDAD'], // titulos de columnas
+
+                        ['B7', 'ENERO'],['B8', 'FEBERRO'],['B9', 'MARZO'],['B10', 'ABRIL'],['B11', 'MAYO'], // Meses
+                        ['B12', 'JUNIO'],['B13', 'JULIO'],['B14', 'AGOSTO'],['B15', 'SEPTIEMBER'],
+                        ['B16', 'OCTUBRE'],['B17', 'NOVIEMBRE'],['B18', 'DICIEMBRE'],
+
+                        ['C7', 50],['C8', 10],['C9', 30],['C10',20],['C11',50],['C12',10],   // Valores por mes
+                        ['C13',60],['C14',20],['C15',40],['C16',30],['C17',10],['C18',20]  
+                    ];
+
+        $linea = new CatGraficoSpreadSheet();
+
+        return $linea->catalogo($titulo, $datos);
+
+
+    }
     public function excel(){
 
         $xcel = new HojaExcel();

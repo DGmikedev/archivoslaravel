@@ -99,6 +99,7 @@ Route::view('/', 'welcome');
 // Templates phpoffice/SpreadSheet
 
     Route::get('/phpoffice-spreadsheet', [SpreadSheetController::class, 'excel']);
+    Route::get('/phpoffice-catalogo-spsheet', [SpreadSheetController::class, 'catalogo']);
 
 // Templates phpoffice/phppresentation
 
