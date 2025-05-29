@@ -5,18 +5,6 @@ namespace App\Clases\PphOffice\phpSpreadsheet;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use App\Clases\PphOffice\phpSpreadsheet\GraficoSpreadSheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-/*
-use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-use PhpOffice\PhpSpreadsheet\Style\Color;
-use PhpOffice\PhpSpreadsheet\Style\Fill;
-use PhpOffice\PhpSpreadsheet\Style\Border;
-use PhpOffice\PhpSpreadsheet\Chart\Chart;
-use PhpOffice\PhpSpreadsheet\Chart\DataSeries;
-use PhpOffice\PhpSpreadsheet\Chart\DataSeriesValues;
-use PhpOffice\PhpSpreadsheet\Chart\Layout;
-use PhpOffice\PhpSpreadsheet\Chart\Legend;
-use PhpOffice\PhpSpreadsheet\Chart\PlotArea;
-use PhpOffice\PhpSpreadsheet\Chart\Title; */
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Response;

@@ -5,15 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Clases\PphOffice\phpSpreadsheet\HojaExcel;
 use App\Clases\PphOffice\phpSpreadsheet\CatGraficoSpreadSheet;
+use App\Clases\PphOffice\phpSpreadsheet\Grafico_Linea_SpreadSheet;
 
 class SpreadSheetController extends Controller
 {
+    public function graphicline(){
+        $grafico_linea = new Grafico_Linea_SpreadSheet();
+        $grafico_linea->graficolinea();
+    }
+
+
+
     public function catalogo(){
 
         $titulo = "Ventas por mes";
 
             $datos = [
-                ['', 'ENERO', 'FEBERRO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBER', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'],
+                ['', 'ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'],
                 ['Producto A', 10, 20, 30, 35, 20, 40, 20, 60, 30, 10, 30, 20 ],
                 ['Producto B', 15, 25, 35, 10, 5, 30, 20, 80, 10, 15, 20, 12 ],
             ];

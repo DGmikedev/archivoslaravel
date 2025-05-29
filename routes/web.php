@@ -29,8 +29,16 @@ use App\Http\Controllers\XMLController;
 # Controlador para docuemntos excel
 use App\Http\Controllers\SpreadSheetController;
 
+# Controlador para mapas
+use App\Http\Controllers\MapsController;
+
 
 Route::view('/', 'welcome');
+
+
+// MAPS
+
+    Route::get('/open-street-maps', [MapsController::class, 'mapa']);
 
 
 // XML
