@@ -7,9 +7,14 @@
     <title>Mapa</title>
 </head>
 <body>
+    <div>
+        <div><x-MapsComponent target="{{ $mapa1 }}"></x-MapsComponent></div>
+        <div><x-MapsComponent target="{{ $mapa1 }}"></x-MapsComponent></div>
+        <div><x-MapsComponent target="{{ $mapa1 }}"></x-MapsComponent></div>
+        <div><x-MapsComponent target="{{ $mapa1 }}"></x-MapsComponent></div>
+    </div>
+    <x-MapsComponent target="{{ $mapa2 }}"></x-MapsComponent>
 
-    <x-MapsComponent></x-MapsComponent>
-    <x-MapsComponent></x-MapsComponent>
 
  </body>
 </html>

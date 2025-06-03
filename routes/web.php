@@ -40,7 +40,6 @@ Route::view('/', 'welcome');
 
     Route::get('/open-street-maps', [MapsController::class, 'mapa']);
 
-
 // XML
 
     # Genera documento en xml a partir de una array y lo muestra o descarga

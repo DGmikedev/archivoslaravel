@@ -8,6 +8,8 @@ class MapsController extends Controller
 {
     public function mapa(){
 
-        return view('MapsView');
+        $objetivo = "map1";
+        $objetivo2 = "map2";
+        return view('MapsView', ["mapa1" => $objetivo, "mapa2" => $objetivo2]);
     }
 }
