@@ -34,5 +34,10 @@ Modifier 	Description <br>
             <td>{{ $cambio }}</td>
         </tr>
     </table>
+
+    <br>
+
+    <button wire:mouseover="adiciona(135)" >+</button>
+    <h1>{{ $count }}</h1>
     
 </div>

@@ -32,6 +32,9 @@ use App\Http\Controllers\SpreadSheetController;
 # Controlador para mapas
 use App\Http\Controllers\MapsController;
 
+# Controlador de Tipos
+ use App\Http\Controllers\TiposController;
+
 
 Route::view('/', 'welcome');
 
@@ -121,5 +124,10 @@ Route::view('/', 'welcome');
     Route::get('/phpoffice-presentacion8',    [ PPTController::class, 'presentacion8'   ]);
     Route::get('/phpoffice-presentacion9',    [ PPTController::class, 'presentacion9'   ]);
     Route::get('/phpoffice-presentacion10',   [ PPTController::class, 'presentacion10'  ]);
+
+// Template de Tipado en PHP y modo estricto
+    
+    Route::get("/tipos", [TiposController::class, "index"]);    
+
 
 
