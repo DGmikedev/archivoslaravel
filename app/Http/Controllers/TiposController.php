@@ -24,10 +24,22 @@ class TiposController extends Controller
 
     public function test_tipos(){
 
+        /*
+        
+        Documento (abstracta)
+        │
+        ├── Informe
+        ├── Factura
+        ├── Recibo
+        └── Reporte
+        
+        */
+
     }
 
     /**
      * Show the form for creating a new resource.
+     * 
      */
     public function create()
     {
