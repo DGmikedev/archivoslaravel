@@ -24,6 +24,7 @@ class Fecha
 {
     public static function tipoFecha(string $fecha, string $tipo_fecha = 'N',): string
     {
+        $fecha = new date()
         return  "TipoFecha = $tipo_fecha - $fecha";
     }
 }
