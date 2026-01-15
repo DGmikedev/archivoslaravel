@@ -1,6 +1,6 @@
 <?php
-
 namespace App\Clases\FpdfClases;
+
 use Fpdf\Fpdf;
 
 class ListadoReporte extends Fpdf{

@@ -1,9 +1,5 @@
 <?php
 
-namespace App\Clases\Documentos;
-
-use App\Clases\FpdfClases\ListadoReporte;
-
 enum TipoDoc: string
 {
     case FACTURA = "f";
@@ -26,7 +22,7 @@ enum FormatoFecha: string
 
 class Fecha
 {
-    public static function tipoFecha(string $fecha, string $tipo_fecha = 'N',): string
+    public static function tipoFecha(string $fecha, string $tipo_fecha = 'N'): string
     {
         // $fecha = new date();
         return  "TipoFecha = $tipo_fecha "; // - $fecha";
@@ -71,12 +67,9 @@ class Documento
         $this->observaciones = $_observaciones;
         $this->firma = $_firma;
 
-       // echo Fecha::tipoFecha($this->fecha, 'A');
-
-
-
     }
 }
+
 $carta = new Documento(
 
     "30-12-2025",       //$fecha,
@@ -84,7 +77,7 @@ $carta = new Documento(
     "CONTA-B",          //$emisor,
     "CLIENTE:0526",     //$receptor,
     "0",                //$estado_doc,
-    "1af1dfa857bf1d8814fe1af8983c18080019922e557f15a8a3366a403c8212a29", // $_firma
+    "1af1dfa857bf1d88", //$_firma
     "1500",             //$_total,
     "N/A",              //$_observaciones,
     TipoDoc::FACTURA,   //TipoDoc $_tipo_doc
@@ -92,33 +85,7 @@ $carta = new Documento(
 
 );
 
-
-/*######################################################## */
-function doc(){
-  $pdf = new ListadoReporte();
-
-        $format = ['L', 'mm', 'legal'];
-        $nam_cli = ["Index","Account_Id","Lead Owner","First Name","Last Name","Company","Phone 1","Email 1","Website","Source","Deal Stage"];
-        $clients = [
-            ["1",        "862d63fBE445C3B",      "Antonio Savage",       "Cameron",          "Price",        "Dean, Daniels and Charles",      "999-826-8118      ",      "jermaine42@bush.info",                      "http://www.moody-colon.com/",       "Facebook Ads",           "Qualified"],       
-            ["2",        "B1B9fa4B9A41f10",      "Alexander Mccall",     "Phyllis",          "Wade",         "Woodward, Everett and Doyle",    "821-857-6254      ",      "dorothy36@shannon-dunn.info",               "https://nash.com/",                 "Other",                  "Closed Lost"],
-        ];
-/*######################################################## */
-
-return $pdf->create_report($format, $nam_cli, $clients);
-
-}
-
-doc();
-
-
-// var_dump($carta);
-
-// C:\laragon\www\archivoslaravel\app\Clases\Documentos\Documento.php
-
-
-
-
+var_dump($carta);
 
 /*
 ------ Requerimiento ------------------
